@@ -1,0 +1,23 @@
+.inner_section {
+  color: white;
+  margin: 10px;
+  padding: 20px;
+}
+
+.frame {
+  position: relative;
+  width: 50%;
+}
+
+.names {
+
+}
+
+.frame: hover .names {
+    opacity: 1;
+}
+.pictures {
+  display: block;
+  width: 100%;
+  height: auto;
+}

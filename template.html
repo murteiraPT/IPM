@@ -9,8 +9,30 @@
         </style>
 -->
         <script type="text/javascript">
-          function toggleVisible(id) {    
+          function onMouseOnChange(x){
+              switch(x){
+                    case 1:
+                      var image = document.getElementById('murtas');
+                      image.src="murtas.jpg";
+                      break;
+                    case 2:
+                      var image = document.getElementById('coding');
+                      image.src="codinha.jpg";
+                      break;
+                    case 3:
+                      var image = document.getElementById('miguel');
+                      image.src="miguel.jpg";
+                      break;
+              }
           }
+            function changeOnMouseOut(){
+                var image1 = document.getElementById('murtas');
+                var image2 = document.getElementById('coding');
+                var image3 = document.getElementById('miguel');
+                image1.src="TrollFace.jpg";
+                image2.src="TrollFace.jpg";
+                image3.src="TrollFace.jpg";
+            }
 
         </script>
         
@@ -27,9 +49,12 @@
     <table align=center>
         <div class="frame">
             <tr>
-                <td><img id="rgb" src = "TrollFace.jpg" width="200" class="pictures"></td>
-                <td><img id="cmy" src = "TrollFace.jpg" width="200" class="pictures"></td> 
-                <td><img id="hsv" src = "TrollFace.jpg" width="200" class="pictures"></td>
+                <td><img id="murtas" onmouseover="onMouseOnChange(1)" src = "TrollFace.jpg" width="200" class="pictures"
+                         onmouseout="changeOnMouseOut()"></td>
+                <td><img id="coding" onmouseover="onMouseOnChange(2)" src = "TrollFace.jpg" width="200" class="pictures"
+                         onmouseout="changeOnMouseOut()"></td> 
+                <td><img id="miguel" onmouseover="onMouseOnChange(3)" src = "TrollFace.jpg" width="200" class="pictures"
+                         onmouseout="changeOnMouseOut()"></td>
             </tr>
             <div class="information">
                 <tr>

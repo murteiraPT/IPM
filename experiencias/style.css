@@ -1,0 +1,57 @@
+body{
+    background: #d7daef;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;   
+}
+
+#header{
+    text-align: center;
+    background: #f74f5a;
+    color: white;
+    font-size: 30px;
+}
+
+.inner_section {
+  color: white;
+  margin: 10px;
+  padding: 20px;
+}
+
+.frame {
+  position: relative;
+  width: 50%;
+}
+
+.names {
+
+}
+
+.frame: hover .names {
+    opacity: 1;
+}
+
+.pictures {
+  background-image: url('TrollFace.jpg');
+  background-size: contain;
+  /*display: block;*/
+  width: 70%;
+  height: 220px;
+  border-radius: 100%;
+  border: 3px solid blue;
+}
+
+.pic1:hover{
+    background-image: url('murtas.jpg');
+}
+
+.pic2:hover{
+    background-image: url('codinha.jpg');
+}
+
+.pic3:hover{
+    background-image: url('miguel.jpg');
+}
+
+.pic1::before{
+    
+}

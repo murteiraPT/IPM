@@ -4,7 +4,7 @@ html {
 }
 
 body{
-    background: #d7daef;
+    background: #FFF;
     font-family: 'Oswald';
     font-weight: 300;
 }
@@ -19,6 +19,13 @@ body{
     background: #333;
     color: white;
     font-size: 30px;
+    display: flex;
+}
+
+#textheader{
+    margin: auto;
+    display: flex;
+    align-items: center;
 }
 
 .active {
@@ -47,7 +54,8 @@ body{
 .pictures {
   display: block;
   width: 100%;
-  height: auto;
+  height: 220px;
+  border-radius: 100%;
 }
 
 .topbar {
@@ -58,7 +66,7 @@ body{
 .topbar a {
     float: left;
     padding: 14px 18px;
-    font-size: 17px;
+    font-size: 14px;
     text-decoration: none;
 }
 
@@ -87,7 +95,7 @@ body{
 .dropdown-content a {
   float: none;
   color: black;
-  padding: 12px 16px;
+  padding: 8px 12px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -105,4 +113,23 @@ body{
 .dropdown:hover .dropbtn {
     background-color: #333;
     color: white;
+}
+
+.container
+{
+  width: 1200px;
+  margin: 70px auto 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container .box
+{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin:: 10px;
+  box-sizing: border-box;;
+  display: inline-block;
 }

@@ -66,12 +66,8 @@ body{
 .topbar a {
     float: left;
     padding: 14px 16px;
-    font-size: 14px;
+    font-size: 20px;
     text-decoration: none;
-}
-
-#home {
-    font-size: 22px;
 }
 
 .dropdown .dropbtn {
@@ -136,4 +132,47 @@ body{
   margin:: 10px;
   box-sizing: border-box;;
   display: inline-block;
+}
+
+.container .box .imgBox
+{
+  position: relative;
+  overflow: hidden;
+}
+.container .box .imgBox img
+{
+  max-width: 100%;
+  transition: transform 2s;
+}
+
+.container .box:hover .imgBox img
+{
+  transform: scale(1.2);
+}
+.container .box .details
+{
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+}
+
+.container .box .details .content
+{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50);
+  text-align: center;
+  padding: 15px;
+  color: #fff;
+}
+
+.container .box .details .content p
+{
+  margin: 10px 0 0;
+  padding: 0;
+  font-size: 20px;
+  color: #ff0;
 }

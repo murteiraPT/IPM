@@ -22,10 +22,6 @@ body{
     display: flex;
 }
 
-#footer {
-    background: #333;
-    display: flex;
-}
 
 #textheader{
     margin: auto;
@@ -124,7 +120,7 @@ body{
 .container
 {
   width: 1050px;
-  margin: 100px auto 134px;
+  margin: 110px auto 158px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -144,6 +140,7 @@ body{
 {
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 .container .box .imgBox img
 {
@@ -168,6 +165,7 @@ body{
   transform: scaleY(0);
   transition: transform .5s;
   color: white;
+
 }
 .container .box:hover .details
 {
@@ -178,10 +176,10 @@ body{
 .container .box .details .content
 {
   position: absolute;
-  top: 50%;
+  top: 0%;
   transform: translateY(-50);
   text-align: center;
-  padding: 15px;
+  padding-left: 20px;
   color: #fff;
 }
 
@@ -189,4 +187,18 @@ body{
 {
   margin: 10px 0 0;
   padding: 0;
+}
+
+
+.footer {
+    background: #333;
+    display: flex;
+}
+
+.inform {
+    margin: auto;
+    font-size: 12px;
+    color: rgb(128,128,128);
+    float: right;
+    text-align: right;
 }

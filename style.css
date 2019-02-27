@@ -22,6 +22,11 @@ body{
     display: flex;
 }
 
+#footer {
+    background: #333;
+    display: flex;
+}
+
 #textheader{
     margin: auto;
     display: flex;
@@ -94,8 +99,9 @@ body{
 }
 .dropdown-content a {
   float: none;
-  color: black;
+  color: grey;
   padding: 8px 12px;
+  font-size: 14px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -117,8 +123,8 @@ body{
 
 .container
 {
-  width: 1200px;
-  margin: 70px auto 0;
+  width: 1050px;
+  margin: 100px auto 134px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -129,7 +135,7 @@ body{
   position: relative;
   width: 300px;
   height: 300px;
-  margin:: 10px;
+  margin: 20px;
   box-sizing: border-box;;
   display: inline-block;
 }
@@ -149,15 +155,25 @@ body{
 {
   transform: scale(1.2);
 }
+
 .container .box .details
 {
+  align-self: center;
   position: absolute;
   top: 200px;
   left: 10px;
   bottom: 10px;
   right: 10px;
   background: rgba(0,0,0,0.6);
+  transform: scaleY(0);
+  transition: transform .5s;
+  color: white;
 }
+.container .box:hover .details
+{
+  transform: scaleY(1);
+}
+
 
 .container .box .details .content
 {
@@ -173,6 +189,4 @@ body{
 {
   margin: 10px 0 0;
   padding: 0;
-  font-size: 20px;
-  color: #ff0;
 }

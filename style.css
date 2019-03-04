@@ -191,14 +191,23 @@ body{
 
 
 .footer {
-    background: #333;
-    display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 85px;
+  width: 100%;
+  background-color: #333;
+  align: center;
+  line-height: 0.5;
 }
 
 .inform {
-    margin: auto;
+    padding-right: 1px;
+    align-items: center;
+    justify-content: right;
+    line-height: 0.5;
     font-size: 12px;
     color: rgb(128,128,128);
-    float: right;
     text-align: right;
+    vertical-align: middle;
 }

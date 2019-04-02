@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="teste.css">
+    <script src="changepage.js"></script>
+
+</head>
+<body>
+    <div class="screen">
+        <div class="info-bar">
+            <table style="width: 100%;">
+                <tr>
+                    <td class="top-icons" width="1%">
+                        <img id="message" src="icons/email.png" width="12px">
+                    </td>
+                    <td class="top-icons" width="1%">
+                        <img id="call" src="icons/telephone.png" width="12px">
+                    
+                    </td>
+                    <td class="top-icons" width="1%">
+                        <img id="insta" src="icons/instagram.png" width="12px">
+                    </td>
+                    <td width="90%">
+                        <!-- espaço em branco na top bar -->
+                    </td>
+                    <td class="top-icons">
+                        <img id="heart" src="icons/like.png" width="12px">
+                    </td>
+                    <td class="top-text">
+                        80
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+        <div class="time">
+            <h1> 16:18 </h1>
+        </div>
+  <!-- Swiper -->
+        
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img id="map" src="icons/map.png" width="100%">
+                </div>
+                <div class="swiper-slide">
+                    <img id="translate" src="icons/worlwide.png" width="100%" onclick="goToTranslator()">
+                </div>
+                <div class="swiper-slide">
+                    <img id="settings" src="icons/settings.png" width="100%">
+                </div>
+                <div class="swiper-slide">
+                </div>
+            </div>        
+        </div>
+
+    </div>
+
+  <!-- Swiper JS -->
+    <script src="swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            
+            coverflowEffect: {
+                rotate: 10,
+                stretch: 0,
+                depth: 100,
+                modifier: 3,
+                slideShadows : false,
+            },
+        });
+    </script>
+</body>
+</html>

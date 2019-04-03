@@ -3,9 +3,7 @@ body
 	background-color: #000;
 	margin: 0;		
 }
-
-ul {
-    padding: 0;
+ul{
     list-style-type: none;
 }
 .carousel_container
@@ -23,7 +21,7 @@ ul {
 	cursor: default !important;
 }
 
-.carousel_item
+.carousel_itemz
 {
 	float:left;
     border: 0px solid #cc0000;
@@ -112,3 +110,4 @@ ul {
 {
     cursor: -webkit-grabbing;
     cursor: -moz-grabbing;
+}

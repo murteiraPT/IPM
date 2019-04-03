@@ -11,7 +11,7 @@
 
 </head>
 <body>
-    <div class="screen">
+    <div class="screen" ondblclick="goToMainMenu()">
         <div class="info-bar">
             <table style="width: 100%;">
                 <tr>
@@ -66,10 +66,16 @@
                     <td class="top-text">
                         IN
                     </td>
-                    
                 </tr>
             </table>
         </div>
+        <div ondblclick=""></div>
     </div>
+
+    <script>
+    function goToMainMenu(){
+        window.location.href = "teste.html";
+    }
+    </script>
 </body>
 </html>

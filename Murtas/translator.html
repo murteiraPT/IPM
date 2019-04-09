@@ -15,35 +15,44 @@
         <div class="info-bar">
             <table style="width: 100%;">
                 <tr>
-                    <td width="2%"></td>
-                    <td class="top-icons" width="15%">
-                        <img id="message" src="icons/home.png" width="15px" onclick="goToMainMenu()">
-                    </td>
-                    <td class="top-icons" width="15%">
-                        <img id="call" src="icons/alarm.png" width="15px">
-                    
-                    </td>
-                    <td width="32%">
-                        <!-- espaço em branco na top bar -->
-                    </td>
-                    <td class = "top-text">
-                        <span id="datetime"></span>
-                    </td>
-                    <td width="40%">
-                    
-                    </td>
-                    <td class="top-icons">
-                        <img id="heart" src="icons/like.png" width="15px">
-                    </td>
-                    <td class="top-text">
-                        80
-                    </td>
-                    <td class="top-icons" width="8%">
-                            <img id="bell" src="icons/help.png" width="16px" onclick="goToHelpMenu()">
-                    </td>
-                    
-                </tr>
-            </table>
+                  <td width="2%"></td>
+                  <td class="top-icons" width="10%">
+                      <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
+                  </td>
+                  <td class="popupM" width="10%", onlcick="messagePopUp()">
+                      <img id="notifications" src="icons/alarm.png" width="20px">
+                      <span class="popuptextM" id="messagePopUp">
+                        HelpTest123
+                       </span>
+
+                  </td>
+                  <td width="42%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class = "top-text">
+                      16:18
+                  </td>
+                  <td width="40%">
+
+                  </td>
+                  <td class="top-icons">
+                      <img id="heart" src="icons/like.png" width="20px">
+                  </td>
+                  <td class="top-text">
+                      80
+                  </td>
+                  <td class="popup", width="8%", onclick="helpPopUp()">
+                          <img id="bell" src="icons/help.png" width="20px">
+                          <span class="popuptext" id="helpPopUp">
+                             Help
+                            <br> - Select the Languages
+                            <br> - Press the mic button to record
+                            <br> - Select the output so you can hear/read your translation
+                          </span>
+                  </td>
+
+              </tr>
+          </table>
         </div>
         <script>
             var dt = new Date();
@@ -62,17 +71,17 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="voicebutton">
             <img id="voicebutton" src="icons/voicebutton.png" alt="voice-button">
         </div>
-        
+
         <div class="menus">
             <div class="menus menu1">Portuguese</div>
             <div class="menus menu3"></div>
             <div class="menus menu2">English</div>
         </div>
-        
+
     </div>
 </body>
 </html>

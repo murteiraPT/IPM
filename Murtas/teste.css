@@ -111,7 +111,7 @@ justify-content: center;
 }
 
 .menus{
-    margin-top: 6px; 
+    margin-top: 3px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,10 +121,13 @@ justify-content: center;
     width: 120px;
     height: 25px;
     border: 1px solid #888888;
-    border-radius: 10%;
+    background-color:  #888888;
     margin-left: 15px;
     margin-right:15px 
 }
 
+.menu3{
+    width: 
+}
 
 

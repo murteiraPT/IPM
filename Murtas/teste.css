@@ -201,22 +201,22 @@ justify-content: center;
   padding: 8px 0;
   position: absolute;
   z-index: 1;
-  bottom: -50%;
+  bottom: -180%;
   left: 50%;
-  margin-left: -160px;
-
+  margin-left: -30px;
+  font-size: 12px;
 }
 
 /* Popup arrow */
 .popupM .popuptextM::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: -20%;
   left: 50%;
-  margin-left: -5px;
+  margin-left: -45px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: transparent transparent #555 transparent;
 }
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */

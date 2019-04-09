@@ -136,14 +136,42 @@ justify-content: center;
     outline: none;
 }
 
-.menu1::before{
-    content: '';
+.menu1:before{
+    content: '\f358';
+    font-family: "Font Awesome 5 Free";
     position: absolute;
     top: 0;
     right: 0;
     width: 25px;
     height: 25px;
-    background: #fff; 
+    text-align: center;
+    line-height: 25px;
+    color: #fff;
+    font-size: 21px;
+    background: #9E9E9E; 
+    pointer-events: none;
+}
+.menu1:hover:before{
+    background: #b8b8b8;
+}
+
+.menu2:before{
+    content: '\f358';    
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;    
+    text-align: center;
+    line-height: 25px;
+    color: #fff;
+    font-size: 21px;
+    background: #9E9E9E;
+    pointer-events: none;
+}
+.menu2:hover:before{
+    background: #b8b8b8;
 }
 .popup {
   position: relative;

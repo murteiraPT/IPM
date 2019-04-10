@@ -15,42 +15,165 @@
         <div class="info-bar">
             <table style="width: 100%;">
                 <tr>
-                    <td class="top-icons" width="1%">
-                        <img id="message" src="icons/email.png" width="12px">
-                    </td>
-                    <td class="top-icons" width="1%">
-                        <img id="call" src="icons/telephone.png" width="12px">
-                    
-                    </td>
-                    <td class="top-icons" width="1%">
-                        <img id="bell" src="icons/alarm.png" width="12px">
-                    </td>
-                    <td width="43%%">
-                        <!-- espaço em branco na top bar -->
-                    </td>
-                    <td class = "top-text">
-                        16:18
-                    </td>
-                    <td width="45%">
-                    
-                    </td>
-                    <td class="top-icons">
-                        <img id="heart" src="icons/like.png" width="12px">
-                    </td>
-                    <td class="top-text">
-                        80
-                    </td>
-                    
-                </tr>
-            </table>
+                  <td width="2%"></td>
+                  <td class="top-icons" width="10%">
+                      <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
+                  </td>
+                  <td class="popupM" width="10%", onclick="messagePopUp()">
+                      <img id="notifications" src="icons/alarm.png" width="20px">
+                      <span class="popuptextM" id="messagePopUp">
+                        Notifications
+                        <br> No new notifications
+                       </span>
+
+                  </td>
+                  <td width="42%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class = "top-text">
+                    <span id="datetime"></span>
+                  </td>
+                  <td width="40%">
+
+                  </td>
+                  <td class="top-icons">
+                      <img id="heart" src="icons/like.png" width="20px">
+                  </td>
+                  <td class="top-text">
+                      80
+                  </td>
+                  <td class="popup", width="8%", onclick="helpPopUp()">
+                          <img id="bell" src="icons/help.png" width="20px">
+                          <span class="popuptext" id="helpPopUp">
+                             Help
+                            <br> - Select the Languages
+                            <br> - Press the mic button to record
+                            <br> - Select the output so you can hear/read your translation
+                          </span>
+                  </td>
+
+              </tr>
+          </table>
         </div>
-        
-        <!-- Icon -->
-        <div class="translator-icon" width="100%">
-            <img id="trans" width="100%" src="icons/worldwide1.png">
-            
+        <script>
+            var dt = new Date();
+            document.getElementById("datetime").innerHTML = ((("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)));
+        </script>
+
+        <div class="middle-section">
+            <div class="translator-icon">
+                <img id="trans" src="icons/worldwide.png" alt="worldwide">
+            </div>
+            <div class="location">
+                <div class="left-location"> <img id = "myloco" src="icons/myloco.png" alt="myloco"></div>
+                <div class="right-location">
+                    <div id="nameOfCountry">Spain</div>
+                    <div>Ctra. San Lorenzo, Ibiza</div>
+                </div>
+            </div>
         </div>
-        
+
+        <div class="voicebutton">
+            <img id="voicebutton" src="icons/voicebutton.png" alt="voice-button" onclick="talkingTest()">
+        </div>
+
+        <div class="menus">
+            <div class="menus menu1">
+                <select id="l1" onclick="hideTalk()">
+                    <option value="portuguese">Portuguese</option>
+                    <option value="english">English</option>
+                    <option value="italian">Italian</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="turkish">Turkish</option>
+                    <option value="deutsh">Deutsh</option>
+                </select>
+            </div>
+            <div class="menus menu2">
+                <select id="l2" onclick="hideTalk()">
+                    <option value="portuguese">Portuguese</option>
+                    <option value="english">English</option>
+                    <option value="italian">Italian</option>
+                    <option value="spanish" selected>Spanish</option>
+                    <option value="french">French</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="turkish">Turkish</option>
+                    <option value="deutsh">Deutsh</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div id ="talkingPT">
+      <span>
+      <div onclick="translateBD();hideTalk1()">
+        <p>Bom Dia</p>
+      </div>
+      <div onclick="translateCE();hideTalk1()">
+        <p>Como estas?</p>
+      </span>
+    </div>
+    </div>
+
+    <div id ="talkingEN">
+      <span>
+        <div onclick="translateBD();hideTalk1()">
+          <p>Good Morning</p>
+        </div>
+        <div onclick="translateCE();hideTalk1()">
+          <p>How are you?</p>
+        </div>
+        </span>
+    </div>
+    <div id ="talkingFR">
+      <span>
+        <div onclick="translateBD();hideTalk1()">
+          <p>Bonjour</p>
+        </div>
+        <div onclick="translateCE();hideTalk1()">
+          <p>Comment ça va?</p>
+        </div>
+      </span>
+    </div>
+
+    <div id ="BDPT">
+      <span>
+          <p>Bom Dia</p>
+      </span>
+    </div>
+
+    <div id ="BDEN">
+      <span>
+          <p>Good Morning</p>
+      </span>
+    </div>
+
+    <div id ="BDFR">
+      <span>
+          <p>Bonjour</p>
+      </span>
+    </div>
+
+    <div id ="CEPT">
+      <span>
+          <p>Como estas?</p>
+      </span>
+    </div>
+
+    <div id ="CEEN">
+      <span>
+          <p>How are you?</p>
+      </span>
+    </div>
+
+    <div id ="CEFR">
+      <span>
+          <p>Comment ça va?</p>
+      </span>
     </div>
 </body>
 </html>

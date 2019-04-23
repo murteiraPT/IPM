@@ -7,6 +7,9 @@ body {
     padding: 0;
 }
 
+.titulo{
+  text-align: center;
+}
 
 .screen .swiper-container {
     width: 100%;
@@ -177,6 +180,7 @@ justify-content: center;
   position: relative;
   display: inline-block;
   cursor: pointer;
+  z-index: 2;
 }
 
 /* The actual popup (appears on top) */
@@ -190,7 +194,7 @@ justify-content: center;
   padding: 8px 0;
   position: absolute;
   z-index: 1;
-  top: 10%;
+  bottom: 20%;
   left: 50%;
   margin-left: -195px;
   font-size: 13px;
@@ -201,7 +205,7 @@ justify-content: center;
 .popup .popuptext::after {
   content: "";
   position: absolute;
-  top: 10%;
+  top: 78%;
   left: 50%;
   margin-left: 95px;
   border-width: 5px;
@@ -231,6 +235,7 @@ justify-content: center;
   position: relative;
   display: inline-block;
   cursor: pointer;
+  z-index: 2;
 }
 
 /* The actual popup (appears on top) */
@@ -268,6 +273,19 @@ justify-content: center;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
 }
+
+#fingerprint {
+  width: 40%;
+}
+
+#l1{
+  vertical-align: top;
+}
+#l2{
+  vertical-align: top;
+}
+
+
 #talkingPT {
   display: none;
 }
@@ -277,11 +295,20 @@ justify-content: center;
 #talkingFR {
   display: none;
 }
+#talkingES {
+  display: none;
+}
+
 #BDPT {
   display: none;
 }#BDEN {
   display: none;
 }#BDFR {
+  display: none;
+}#BDES {
+  display: none;
+}
+#CEES{
   display: none;
 }#CEPT {
   display: none;

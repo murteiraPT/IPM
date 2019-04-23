@@ -1,29 +1,15 @@
 
-function goToTranslator() {
-    window.location.href = "translator.html";
-}
-
-function goToMainMenu() {
-    window.location.href = "teste.html";
-}
-
-function helpPopUp() {
-  var popup = document.getElementById("helpPopUp");
-  popup.classList.toggle("show");
-}
-
-function messagePopUp() {
-  var popupM = document.getElementById("messagePopUp");
-  popupM.classList.toggle("showM");
-}
-
 function hideTalk() {
   var x = document.getElementById("BDPT");
   var y = document.getElementById("BDEN");
   var z = document.getElementById("BDFR");
+  var w = document.getElementById("BDES");
+
   var a = document.getElementById("CEPT");
   var b = document.getElementById("CEEN");
   var c = document.getElementById("CEFR");
+  var d = document.getElementById("CEES");
+
 
 
   x.style.display = "none";
@@ -32,6 +18,9 @@ function hideTalk() {
   a.style.display = "none";
   b.style.display = "none";
   c.style.display = "none";
+  w.style.display = "none";
+  d.style.display = "none";
+
 
   hideTalk1();
 }
@@ -40,10 +29,12 @@ function hideTalk1() {
   var x = document.getElementById("talkingPT");
   var y = document.getElementById("talkingEN");
   var z = document.getElementById("talkingFR");
+  var w = document.getElementById("talkingES");
 
   x.style.display = "none";
   y.style.display = "none";
   z.style.display = "none";
+  w.style.display = "none";
 
 }
 function talkingTest() {
@@ -54,8 +45,18 @@ function talkingTest() {
   else if(l1 == "english"){
     english();}
   else if(l1 == "french"){
-    french();
+    french();}
+  else if(l1 == "spanish"){
+    spanish();
   }
+}
+function switchIMG(){
+    document.getElementById("voicebutton").src = "icons/waves1.gif";
+}
+
+function switchGif(){
+  document.getElementById("voicebutton").src = "icons/voicebutton.png";
+
 }
 
 function portuguese() {
@@ -70,6 +71,10 @@ function english() {
 
 function french() {
   var x = document.getElementById("talkingFR");
+  x.style.display = "block";
+}
+function spanish() {
+  var x = document.getElementById("talkingES");
   x.style.display = "block";
 }
 
@@ -88,6 +93,11 @@ function BDfrench() {
   x.style.display = "block";
 }
 
+function BDspanish() {
+  var x = document.getElementById("BDES");
+  x.style.display = "block";
+}
+
 function CEportuguese() {
   var x = document.getElementById("CEPT");
   x.style.display = "block";
@@ -103,6 +113,11 @@ function CEfrench() {
   x.style.display = "block";
 }
 
+function CEspanish() {
+  var x = document.getElementById("CEES");
+  x.style.display = "block";
+}
+
 function translateBD() {
   var ddl2 = document.getElementById("l2");
   var l2 = ddl2.options[ddl2.selectedIndex].value;
@@ -112,6 +127,9 @@ function translateBD() {
     BDenglish();}
   else if(l2 == "french"){
     BDfrench();}
+  else if(l2 == "spanish"){
+    BDspanish();}
+
 }
 function translateCE() {
   var ddl2 = document.getElementById("l2");
@@ -122,4 +140,6 @@ function translateCE() {
     CEenglish();}
   else if(l2 == "french"){
     CEfrench();}
+  else if(l2 == "spanish"){
+    CEspanish();}
 }

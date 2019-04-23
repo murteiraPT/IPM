@@ -17,18 +17,17 @@
           <table style="width: 100%;">
               <tr>
                 <td width="2%"></td>
-                <td class="top-icons" width="10%">
-                    <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
-                </td>
                 <td class="popupM" width="10%", onclick="messagePopUp()">
                     <img id="notifications" src="icons/alarm.png" width="20px">
                     <span class="popuptextM" id="messagePopUp">
-                      Notifications
+                      <div class="titulo">
+                        Notifications
+                      </div>
                       <br> No new notifications
                      </span>
 
                 </td>
-                <td width="42%">
+                <td width="54%">
                     <!-- espaço em branco na top bar -->
                 </td>
                 <td class = "top-text">
@@ -43,22 +42,11 @@
                 <td class="top-text">
                     80
                 </td>
-                <td class="popup", width="8%", onclick="helpPopUp()">
-                        <img id="bell" src="icons/help.png" width="20px">
-                        <span class="popuptext" id="helpPopUp">
-                           Help
-                          <br> - Pick a Menu
-                        </span>
-                </td>
-
+                <td width="2%"></td>
             </tr>
         </table>
       </div>
-      <script>
-          var dt = new Date();
-          document.getElementById("datetime").innerHTML = ((("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)));
-      </script>
-
+      
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -74,6 +62,25 @@
                     <img id="settings" src="icons/settings.png" width="100%">
                 </div>
             </div>
+        </div>
+        <div class="down-bar">
+            <table style="width: 100%;">
+                <tr>
+                  <td width="91%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class="popup", width="8%", onclick="helpPopUp()">
+                          <img id="bell" src="icons/help.png" width="20px">
+                          <span class="popuptext" id="helpPopUp">
+                            <div class="titulo">
+                             Help
+                           </div>
+                            <br> - Swipe to pick a Menu
+                          </span>
+                  </td>
+
+              </tr>
+          </table>
         </div>
 
     </div>

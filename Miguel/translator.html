@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="teste.css">
     <script src="changepage.js"></script>
+    <script src="translator.js"></script>
+
 
 </head>
 <body>
@@ -17,9 +19,6 @@
             <table style="width: 100%;">
                 <tr>
                   <td width="2%"></td>
-                  <td class="top-icons" width="10%">
-                      <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
-                  </td>
                   <td class="popupM" width="10%", onclick="messagePopUp()">
                       <img id="notifications" src="icons/alarm.png" width="20px">
                       <span class="popuptextM" id="messagePopUp">
@@ -30,7 +29,13 @@
                        </span>
 
                   </td>
-                  <td width="42%">
+                  <td width="12%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class="top-icons" width="10%">
+                      <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
+                  </td>
+                  <td width="27%">
                       <!-- espaço em branco na top bar -->
                   </td>
                   <td class = "top-text">
@@ -43,9 +48,9 @@
                       <img id="heart" src="icons/like.png" width="20px">
                   </td>
                   <td class="top-text">
-                      80
+                      <span id= "heartbeat"></span>
                   </td>
-
+                  <td width="2%"></td>
               </tr>
           </table>
         </div>
@@ -67,23 +72,38 @@
             <img id="voicebutton" src="icons/voicebutton.png" alt="voice-button" onclick="hideTalk();talkingTest();switchIMG();">
         </div>
 
-        <div class="menus">
-            <div class="menus menu1">
-                <select id="l1" class="select" onclick="hideTalk()">
-                    <option value="portuguese">Portuguese</option>
-                    <option value="english">English</option>
-                    <option value="spanish">Spanish</option>
-                    <option value="french">French</option>
-                </select>
-            </div>
-            <div class="menus menu2">
-                <select id="l2" onclick="hideTalk()">
-                    <option value="portuguese">Portuguese</option>
-                    <option value="english">English</option>
-                    <option value="spanish" selected>Spanish</option>
-                    <option value="french">French</option>
-                </select>
-            </div>
+        <div>
+          <table style="width: 100%;">
+            <tr>
+              <td width="2%"></td>
+
+              <td>
+                  <div class="menus menu1">
+                      <select id="l1" class="select" onclick="hideTalk()">
+                          <option value="portuguese">Portuguese</option>
+                          <option value="english">English</option>
+                          <option value="spanish">Spanish</option>
+                          <option value="french">French</option>
+                      </select>
+                  </div>
+              </td>
+              <td width = 20%>
+                <div align = "center">
+                  <img id="pause" src="icons/rounded-pause-button.png" width= "30px" height="29px" onclick = "pause();hideBut();hideTalk1();switchGif()">
+                </div>
+              </td>
+              <td>
+                <div class="menus menu2">
+                    <select id="l2" onclick="hideTalk()">
+                        <option value="portuguese">Portuguese</option>
+                        <option value="english">English</option>
+                        <option value="spanish" selected>Spanish</option>
+                        <option value="french">French</option>
+                    </select>
+                </div>
+              </td>
+              <td width="2%"></td>
+          </tr>
         </div>
         <div class="down-bar">
             <table style="width: 100%;">
@@ -112,10 +132,10 @@
     </div>
     <div id ="talkingPT">
       <span>
-      <div onclick="translateBD();hideTalk1();switchGif()">
+      <div onclick="translateBD()">
         <p>Bom Dia</p>
       </div>
-      <div onclick="translateCE();hideTalk1();switchGif()">
+      <div onclick="translateCE()">
         <p>Como estas?</p>
       </span>
     </div>
@@ -123,30 +143,30 @@
 
     <div id ="talkingEN">
       <span>
-        <div onclick="translateBD();hideTalk1();switchGif()">
+        <div onclick="translateBD();">
           <p>Good Morning</p>
         </div>
-        <div onclick="translateCE();hideTalk1();switchGif()">
+        <div onclick="translateCE()">
           <p>How are you?</p>
         </div>
         </span>
     </div>
     <div id ="talkingFR">
       <span>
-        <div onclick="translateBD();hideTalk1();switchGif()">
+        <div onclick="translateBD()">
           <p>Bonjour</p>
         </div>
-        <div onclick="translateCE();hideTalk1();switchGif()">
+        <div onclick="translateCE()">
           <p>Comment ça va?</p>
         </div>
       </span>
     </div>
     <div id ="talkingES">
       <span>
-        <div onclick="translateBD();hideTalk1();switchGif()">
+        <div onclick="translateBD()">
           <p>Buenos dias</p>
         </div>
-        <div onclick="translateCE();hideTalk1();switchGif()">
+        <div onclick="translateCE()">
           <p>Como estas?</p>
         </div>
       </span>

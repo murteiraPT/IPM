@@ -23,4 +23,5 @@ var myVar = setInterval(myTimer, 1000);
 function myTimer() {
   var dt = new Date();
   document.getElementById("datetime").innerHTML =  ((("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)));
+  document.getElementById("heartbeat").innerHTML = Math.floor((Math.random() * 15) + 65);
 }

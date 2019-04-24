@@ -48,10 +48,10 @@ body {
 }
 
 .finger-container {
-    width: 95px;
-    height: 95px;
-    margin-left: 120px;
-    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 #trans {
@@ -64,8 +64,12 @@ body {
     padding-top: 1px;
 }
 
+.down-bar {
+    padding-top: 1px;
+}
+
 .middle-section{
-    margin-top: 12px;
+    margin-top: 3px;
     display: flex;
     align-items: center;
 }
@@ -76,8 +80,8 @@ body {
 }
 
 #trans{
-    height: 60%;
-    width: 60%;
+    height: 10%;
+    width: 55%;
 }
 
 .location{
@@ -109,12 +113,14 @@ justify-content: center;
 }
 
 #voicebutton{
+  margin-top: -2px;
+
     width: 13%;
     height: 13%;
 }
 
 .menus{
-    margin-top: 3px;
+    margin-top: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,8 +129,6 @@ justify-content: center;
 .menu1, .menu2{
     border: 1px solid #888888;
     background-color:  #888888;
-    margin-left: 15px;
-    margin-right:15px;
     transform: translate(0%, 0%);
 }
 
@@ -250,8 +254,8 @@ justify-content: center;
   position: absolute;
   z-index: 1;
   top: 100%;
-  left: 50%;
-  margin-left: -30px;
+  left: 10%;
+  margin-left: -5px;
   font-size: 12px;
 }
 
@@ -259,8 +263,8 @@ justify-content: center;
 .popupM .popuptextM::after {
   content: "";
   position: absolute;
-  top: -20%;
-  left: 50%;
+  top: -15%;
+  left: 35%;
   margin-left: -46px;
   border-width: 5px;
   border-style: solid;
@@ -315,5 +319,8 @@ justify-content: center;
 }#CEEN {
   display: none;
 }#CEFR {
+  display: none;
+}
+#pause {
   display: none;
 }

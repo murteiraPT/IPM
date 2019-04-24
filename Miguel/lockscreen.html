@@ -11,59 +11,41 @@
 
 </head>
 <body>
-    <div class="screen"><div class="info-bar">
+    <div class="screen">
+        <div class="info-bar">
             <table style="width: 100%;">
                 <tr>
-                  <td width="2%"></td>
-                  <td class="top-icons" width="10%">
-                      <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
-                  </td>
-                  <td class="popupM" width="10%", onclick="messagePopUp()">
-                      <img id="notifications" src="icons/alarm.png" width="20px">
-                      <span class="popuptextM" id="messagePopUp">
-                        Notifications
-                        <br> No new notifications
-                       </span>
+                    <td width="2%"></td>
 
-                  </td>
-                  <td width="42%">
-                      <!-- espaço em branco na top bar -->
-                  </td>
-                  <td class = "top-text">
-                    <span id="datetime"></span>   
-                  </td>
-                  <td width="40%">
+                    <td width="62%">
+                        <!-- espaço em branco na top bar -->
+                    </td>
+                    <td class = "top-text">
+                    <span id="datetime"></span>
+                    </td>
+                    <td width="40%">
 
-                  </td>
-                  <td class="top-icons">
-                      <img id="heart" src="icons/like.png" width="20px">
-                  </td>
-                  <td class="top-text">
-                      80
-                  </td>
-                  <td class="popup", width="8%", onclick="helpPopUp()">
-                          <img id="bell" src="icons/help.png" width="20px">
-                          <span class="popuptext" id="helpPopUp">
-                             Help
-                            <br> - Select the Languages
-                            <br> - Press the mic button to record
-                            <br> - Select the output so you can hear/read your translation
-                          </span>
-                  </td>
+                    </td>
+                    <td class="top-icons">
+                        <img id="heart" src="icons/like.png" width="20px">
+                    </td>
+                    <td class="top-text">
+                          <span id= "heartbeat"></span>
+                    </td>
 
-              </tr>
-          </table>
+
+                </tr>
+            </table>
         </div>
         <script>
             var dt = new Date();
             document.getElementById("datetime").innerHTML = ((("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)));
         </script>
 
+        <!-- Icon -->
         <div class="finger-container">
-            <br>
-            <img id="fingerprint" src="icons/fingerprint.png" width="100%" onclick="goToMainMenu()">
+            <img id="fingerprint" src="icons/fingerprint.png" width="30px" onclick="goToMainMenu()">
         </div>
     </div>
-
 </body>
 </html>

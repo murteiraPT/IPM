@@ -11,41 +11,58 @@
 
 </head>
 <body>
-    <div class="screen">
-        <div class="info-bar">
+    <div class="screen"><div class="info-bar">
             <table style="width: 100%;">
                 <tr>
-                    <td class="top-icons" width="1%">
-                        <img id="message" src="icons/email.png" width="12px">
-                    </td>
-                    <td class="top-icons" width="1%">
-                        <img id="call" src="icons/telephone.png" width="12px">
-                    
-                    </td>
-                    <td class="top-icons" width="1%">
-                        <img id="bell" src="icons/alarm.png" width="12px">
-                    </td>
-                    <td width="90%">
-                        <!-- espaço em branco na top bar -->
-                    </td>
-                    <td class="top-icons">
-                        <img id="heart" src="icons/like.png" width="12px">
-                    </td>
-                    <td class="top-text">
-                        80
-                    </td>
-                    
-                </tr>
-            </table>
+                  <td width="2%"></td>
+                  <td class="top-icons" width="10%">
+                      <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
+                  </td>
+                  <td class="popupM" width="10%", onclick="messagePopUp()">
+                      <img id="notifications" src="icons/alarm.png" width="20px">
+                      <span class="popuptextM" id="messagePopUp">
+                        Notifications
+                        <br> No new notifications
+                       </span>
+
+                  </td>
+                  <td width="42%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class = "top-text">
+                    <span id="datetime"></span>   
+                  </td>
+                  <td width="40%">
+
+                  </td>
+                  <td class="top-icons">
+                      <img id="heart" src="icons/like.png" width="20px">
+                  </td>
+                  <td class="top-text">
+                      80
+                  </td>
+                  <td class="popup", width="8%", onclick="helpPopUp()">
+                          <img id="bell" src="icons/help.png" width="20px">
+                          <span class="popuptext" id="helpPopUp">
+                             Help
+                            <br> - Select the Languages
+                            <br> - Press the mic button to record
+                            <br> - Select the output so you can hear/read your translation
+                          </span>
+                  </td>
+
+              </tr>
+          </table>
         </div>
-        
-        <div class="time">
-            <h1> 16:18 </h1>
-        </div>
-        <!-- Icon -->
+        <script>
+            var dt = new Date();
+            document.getElementById("datetime").innerHTML = ((("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)));
+        </script>
+
         <div class="finger-container">
-            <img id="fingerprint" src="icons/fingerprint.png" width="100%" onclick="goToMainMenu()">
+            <img id="fingerprint" src="icons/fingerprint.png" alt="fingerprint" onclick="goToMainMenu()">
         </div>
     </div>
+
 </body>
 </html>

@@ -45,10 +45,10 @@ body {
 }
 
 .finger-container {
-    width: 95px;
-    height: 95px;
-    margin-left: 120px;
-    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 #trans {
@@ -267,4 +267,8 @@ justify-content: center;
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
+}
+
+#fingerprint{
+    width: 40%;
 }

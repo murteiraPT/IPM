@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="teste.css">
     <script src="changepage.js"></script>
+    <script src="translator.js"></script>
+
 
 </head>
 <body>
@@ -17,18 +19,23 @@
             <table style="width: 100%;">
                 <tr>
                   <td width="2%"></td>
-                  <td class="top-icons" width="10%">
-                      <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
-                  </td>
                   <td class="popupM" width="10%", onclick="messagePopUp()">
                       <img id="notifications" src="icons/alarm.png" width="20px">
                       <span class="popuptextM" id="messagePopUp">
-                        Notifications
+                        <div class="titulo">
+                          Notifications
+                        </div>
                         <br> No new notifications
                        </span>
 
                   </td>
-                  <td width="42%">
+                  <td width="12%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class="top-icons" width="10%">
+                      <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
+                  </td>
+                  <td width="27%">
                       <!-- espaço em branco na top bar -->
                   </td>
                   <td class = "top-text">
@@ -41,25 +48,12 @@
                       <img id="heart" src="icons/like.png" width="20px">
                   </td>
                   <td class="top-text">
-                      80
+                      <span id= "heartbeat"></span>
                   </td>
-                  <td class="popup", width="8%", onclick="helpPopUp()">
-                          <img id="bell" src="icons/help.png" width="20px">
-                          <span class="popuptext" id="helpPopUp">
-                             Help
-                            <br> - Select the Languages
-                            <br> - Press the mic button to record
-                            <br> - Select the output so you can hear/read your translation
-                          </span>
-                  </td>
-
+                  <td width="2%"></td>
               </tr>
           </table>
         </div>
-        <script>
-            var dt = new Date();
-            document.getElementById("datetime").innerHTML = ((("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2)));
-        </script>
 
         <div class="middle-section">
             <div class="translator-icon">
@@ -75,9 +69,8 @@
         </div>
 
         <div class="voicebutton">
-            <img id="voicebutton" src="icons/voicebutton.png" alt="voice-button" onclick="talkingTest()">
+            <img id="voicebutton" src="icons/voicebutton.png" alt="voice-button" onclick="hideTalk();talkingTest();switchIMG();">
         </div>
-
         <div class="menus">
             <div class="menus menu1">
                 <select class="my-cool-select-top" id="l1" onclick="hideTalk()">
@@ -95,16 +88,70 @@
                     <option value="french">French</option>
                 </select>
             </div>
+        <div>
+          <table style="width: 100%;">
+            <tr>
+              <td width="2%"></td>
+
+              <td>
+                  <div class="menus menu1">
+                      <select id="l1" class="select" onclick="hideTalk()">
+                          <option value="portuguese">Portuguese</option>
+                          <option value="english">English</option>
+                          <option value="spanish">Spanish</option>
+                          <option value="french">French</option>
+                      </select>
+                  </div>
+              </td>
+              <td width = 20%>
+                <div align = "center">
+                  <img id="pause" src="icons/rounded-pause-button.png" width= "30px" height="29px" onclick = "pause();hideBut();hideTalk1();switchGif()">
+                </div>
+              </td>
+              <td>
+                <div class="menus menu2">
+                    <select id="l2" onclick="hideTalk()">
+                        <option value="portuguese">Portuguese</option>
+                        <option value="english">English</option>
+                        <option value="spanish" selected>Spanish</option>
+                        <option value="french">French</option>
+                    </select>
+                </div>
+              </td>
+              <td width="2%"></td>
+          </tr>
+        </div>
+        <div class="down-bar">
+            <table style="width: 100%;">
+                <tr>
+                  <td width="91%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class="popup", width="8%", onclick="helpPopUp()">
+                          <img id="bell" src="icons/help.png" width="20px">
+                          <span class="popuptext" id="helpPopUp">
+                            <div class = "titulo">
+                              Help
+                            </div>
+                            <br> - Select the Languages
+                            <br> - Press the mic button to record
+                            <br> - Hear your translation
+
+                          </span>
+                  </td>
+
+              </tr>
+          </table>
         </div>
 
     </div>
     </div>
     <div id ="talkingPT">
       <span>
-      <div onclick="translateBD();hideTalk1()">
+      <div onclick="translateBD()">
         <p>Bom Dia</p>
       </div>
-      <div onclick="translateCE();hideTalk1()">
+      <div onclick="translateCE()">
         <p>Como estas?</p>
       </span>
     </div>
@@ -112,21 +159,31 @@
 
     <div id ="talkingEN">
       <span>
-        <div onclick="translateBD();hideTalk1()">
+        <div onclick="translateBD();">
           <p>Good Morning</p>
         </div>
-        <div onclick="translateCE();hideTalk1()">
+        <div onclick="translateCE()">
           <p>How are you?</p>
         </div>
         </span>
     </div>
     <div id ="talkingFR">
       <span>
-        <div onclick="translateBD();hideTalk1()">
+        <div onclick="translateBD()">
           <p>Bonjour</p>
         </div>
-        <div onclick="translateCE();hideTalk1()">
+        <div onclick="translateCE()">
           <p>Comment ça va?</p>
+        </div>
+      </span>
+    </div>
+    <div id ="talkingES">
+      <span>
+        <div onclick="translateBD()">
+          <p>Buenos dias</p>
+        </div>
+        <div onclick="translateCE()">
+          <p>Como estas?</p>
         </div>
       </span>
     </div>
@@ -149,6 +206,12 @@
       </span>
     </div>
 
+    <div id ="BDES">
+      <span>
+          <p>Buenos dias</p>
+      </span>
+    </div>
+
     <div id ="CEPT">
       <span>
           <p>Como estas?</p>
@@ -164,6 +227,12 @@
     <div id ="CEFR">
       <span>
           <p>Comment ça va?</p>
+      </span>
+    </div>
+
+    <div id ="CEES">
+      <span>
+          <p>Como estas?</p>
       </span>
     </div>
 </body>

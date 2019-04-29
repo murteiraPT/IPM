@@ -1,0 +1,107 @@
+
+.info-bar {
+    padding-top: 1px;
+}
+
+.down-bar {
+    padding-top: 1px;
+}
+
+.middle-section{
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.music-icon{
+  margin-left: 0;
+  padding-left: 12%;
+  padding-top: -10px;
+}
+.name{
+  padding-left: 10px;
+}
+.theplayer{
+  padding-left: 5px;
+}
+.bar{
+  padding-top: 20px;
+}
+#musi{
+  height: 10%;
+  width: 20%;
+}
+#player{
+    padding: 25px;
+    color:#333;
+}
+#songTitle{
+    width:300px;
+    color: white;
+    font-family: monospace;
+    font-size: 18px;
+    position: absolute;
+    top:12%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+}
+#buttons{
+    height: 50px;
+    width: 100%;
+    margin-top: 50px;
+    position:relative;
+    top:10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#play,#next,#pre{
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background-color:grey;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+#next{
+    width: 30px;
+    height: 30px;
+    left: 70%;
+}
+#pre{
+    width: 30px;
+    height: 30px;
+    left: 30%;
+}
+#play img,#next img,#pre img{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#seek-bar{
+    width: 250px;
+    height: 5px;
+    background-color:gray;
+    display: flex;
+    border-radius: 50px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+#fill{
+    height: 5px;
+    background-color:royalblue;
+    border-radius: 20px;
+}
+#handle{
+    width: 8px;
+    height: 8px;
+    background-color:royalblue;
+    border-radius: 50%;
+    margin-left: -5px;
+    transform: scale(2);
+}

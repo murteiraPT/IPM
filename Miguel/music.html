@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="music.css">
+    <link rel="stylesheet" type="text/css" href="teste.css">
+
+    <script src="music.js"></script>
+    <script src="changepage.js"></script>
+    <link rel="stylesheet" type="text/css" href="music.css">
+
+
+    <script src="jquery-1.10.2.min.js"></script>
+
+
+</head>
+<body>
+    <div class="screen">
+        <div class="info-bar">
+            <table style="width: 100%;">
+                <tr>
+                  <td width="2%"></td>
+                  <td class="popupM" width="10%", onclick="messagePopUp()">
+                      <img id="notifications" src="icons/alarm.png" width="20px">
+                      <span class="popuptextM" id="messagePopUp">
+                        <div class="titulo">
+                          Notifications
+                        </div>
+                        <br> No new notifications
+                       </span>
+
+                  </td>
+                  <td width="12%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class="top-icons" width="10%">
+                      <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
+                  </td>
+                  <td width="27%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class = "top-text">
+                    <span id="datetime"></span>
+                  </td>
+                  <td width="40%">
+
+                  </td>
+                  <td class="top-icons">
+                      <img id="heart" src="icons/like.png" width="20px">
+                  </td>
+                  <td class="top-text">
+                      <span id= "heartbeat"></span>
+                  </td>
+                  <td width="2%"></td>
+              </tr>
+          </table>
+        </div>
+        <div class="middle-section">
+              <div class="music-icon">
+                  <img id="musi" src="icons/music-player.png" alt="worldwide">
+              </div>
+            <div class="name">
+                  <div id="songTitle">Demo</div>
+            </div>
+            <div class="bar">
+              <div id="buttons">
+                <table style="width: 100%;">
+                  <tr>
+                    <td> <button id="pre" onclick="pre()"><img src="Pre.png" height="90%" width="90%"/></button> </td>
+                    <td> <button id="play" onclick="playOrPauseSong()"><img src="Pause.png"/></button></td>
+                    <td> <button id="next" onclick="next()"><img src="Next.png" height="90%" width="90%"/></button></td>
+                  </tr>
+                </table>
+              </div><!--
+                <div id="seek-bar">
+                  <div id="fill"></div>
+                  <div id="handle"></div>
+                </div>-->
+              </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+
+        var songs = ["Teste1.mp3","Song2.mp3","Song3.mp3"];
+
+        var songTitle = document.getElementById("songTitle");
+        var fillBar = document.getElementById("fill");
+
+        var song = new Audio();
+        var currentSong = 0;    // it point to the current song
+
+        window.onload = playSong;   // it will call the function playSong when window is load
+
+        function playSong(){
+
+            song.src = songs[currentSong];  //set the source of 0th song
+
+            songTitle.textContent = songs[currentSong]; // set the title of song
+
+            song.play();    // play the song
+        }
+
+        function playOrPauseSong(){
+
+            if(song.paused){
+                song.play();
+                $("#play img").attr("src","Pause.png");
+            }
+            else{
+                song.pause();
+                $("#play img").attr("src","Play.png");
+            }
+        }
+
+        song.addEventListener('timeupdate',function(){
+
+            var position = song.currentTime / song.duration;
+
+            fillBar.style.width = position * 100 +'%';
+        });
+
+
+        function next(){
+
+            currentSong++;
+            if(currentSong > 2){
+                currentSong = 0;
+            }
+            playSong();
+            $("#play img").attr("src","Pause.png");
+            $("#image img").attr("src",poster[currentSong]);
+            $("#bg img").attr("src",poster[currentSong]);
+        }
+
+        function pre(){
+
+            currentSong--;
+            if(currentSong < 0){
+                currentSong = 2;
+            }
+            playSong();
+            $("#play img").attr("src","Pause.png");
+            $("#image img").attr("src",poster[currentSong]);
+            $("#bg img").attr("src",poster[currentSong]);
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+        <div class="down-bar">
+            <table style="width: 100%;">
+                <tr>
+                  <td width="91%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class="popup", width="8%", onclick="helpPopUp()">
+                          <img id="bell" src="icons/help.png" width="20px">
+                          <span class="popuptext" id="helpPopUp">
+                            <div class = "titulo">
+                              Help
+                            </div>
+                            <br> - To be Defined
+
+                          </span>
+                  </td>
+
+              </tr>
+          </table>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

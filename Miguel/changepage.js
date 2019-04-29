@@ -3,6 +3,11 @@ function goToTranslator() {
     window.location.href = "translator.html";
 }
 
+
+function goToMusic() {
+    window.location.href = "music.html";
+}
+
 function goToMainMenu() {
     window.location.href = "teste.html";
 }

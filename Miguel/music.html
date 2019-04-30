@@ -60,33 +60,35 @@
               </tr>
           </table>
         </div>
-        <div class="middle-section">
-              <div class="music-icon">
-                  <img id="musi" src="icons/music-player.png" alt="worldwide">
-              </div>
-            <div class="name">
-                  <div id="songTitle">Demo</div>
+          <div class="music-icon">
+              <img id="musi" src="icons/music-player.png" alt="worldwide">
             </div>
-            <div class="bar">
-              <div id="buttons">
-                <table style="width: 100%;">
-                  <tr>
-                    <td> <button id="pre" onclick="pre()"><img src="Pre.png" height="90%" width="90%"/></button> </td>
-                    <td> <button id="play" onclick="playOrPauseSong()"><img src="Pause.png"/></button></td>
-                    <td> <button id="next" onclick="next()"><img src="Next.png" height="90%" width="90%"/></button></td>
-                  </tr>
-                </table>
-              </div><!--
+          <div class="name">
+                <div id="songTitle">Demo</div>
+          </div>
+
+
+            <table width ="100%" top ="20px">
+              <tr width ="10%">
+              </tr>
+              <tr>
+                <div id="buttons">
+                      <td align="center"> <img src="Pre.png" onclick="pre()"> </td>
+                      <td align="center" id="play"> <img src="Play.png" class="play" onclick="playOrPauseSong()"></td>
+                      <td align="center" > <img src="Next.png" onclick="next()"></td>
+                </div>
+
+              </tr>
+          </table>
+
                 <div id="seek-bar">
                   <div id="fill"></div>
                   <div id="handle"></div>
-                </div>-->
-              </div>
-        </div>
-    </body>
+                </div>
+
     <script type="text/javascript">
 
-        var songs = ["Teste1.mp3","Song2.mp3","Song3.mp3"];
+    var songs = ["I've No More ... To Give.mp3","Song2.mp3","Song3.mp3"];
 
         var songTitle = document.getElementById("songTitle");
         var fillBar = document.getElementById("fill");
@@ -181,6 +183,7 @@
           </table>
         </div>
 
+      </body>
 
 
 

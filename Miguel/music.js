@@ -1,4 +1,4 @@
-    var songs = ["Teste1.mp3","Song2.mp3","Song3.mp3"];
+    var songs = ["icons/I've No More ... To Give.mp3","Song2.mp3","Song3.mp3"];
 
     var songTitle = document.getElementById("songTitle");
     var fillBar = document.getElementById("fill");

@@ -70,13 +70,70 @@
           </td>
         </tr>
         </table>
+        <div class="sureshare">
+        <span class="suresharetext" id="sureshare">
+          <div class="titulo">
+            Are you sure you want to share?
+          </div>
+        <table>
+          <tr>
+          <td width="10px"></td>
+            <td width="90px" onclick="share();sureshare();shsuccess()">Yes</td>
+            <td onclick="share();sureshare();shcanceled()">No</td>
+          </tr>
+        </table>
+        </span>
+      </div>
+      <div class="suresharescc">
+      <span class="suresharetextscc" id="suresharescc" onclick="shsuccess()">
+        <div class="titulo">
+          Shared Succesfully!
+        </div>
+      </span>
+    </div>
 
+    <div class="suresharecld">
+    <span class="suresharetextcld" id="suresharecld" onclick="shcanceled()">
+      <div class="titulo">
+        Share Canceled!
+      </div>
+    </span>
+  </div>
             <table width ="100%" top ="20px">
               <tr width ="50%">
               </tr>
               <tr>
                 <div id="buttons">
-                      <td align="center" width="70px"><img id="share" src="icons/share.png" onclick="share()"></td>
+                      <td align="center" width="60px" class="share">
+                          <img id="share" src="icons/share.png" onclick="share()">
+                          <span class="sharetext" id="sharepop">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/like.png" width="27%" onclick="sureshare()">
+                                        <div> Roberto </div>
+                                    </div>
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/like.png" width="20%" onclick="sureshare()">
+                                        <div> Ana </div>
+                                    </div>
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/like.png" width="40%" onclick="sureshare()">
+                                    </div>
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/like.png" width="40%" onclick="sureshare()">
+                                    </div>
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/like.png" width="40%" onclick="sureshare()">
+                                    </div>
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/like.png" width="40%" onclick="sureshare()">
+                                    </div>
+                                </div>
+                            </div>
+                           </span>
+
+                      </td>
                       <td align="center"> <img src="Pre.png" onclick="pre()"> </td>
                       <td align="center" id="play"> <img src="Play.png" class="play" onclick="playOrPauseSong()"></td>
                       <td align="center" > <img src="Next.png" onclick="next()"></td>
@@ -167,10 +224,47 @@
         console.log('After: ' + song.volume);
 }
 
+function share() {
+  var share = document.getElementById("sharepop");
+  share.classList.toggle("showShare");
+}
 
+function sureshare() {
+  var sureshare = document.getElementById("sureshare");
+  sureshare.classList.toggle("sureshowShare");
+}
 
+function shsuccess() {
+  var sureshare = document.getElementById("suresharescc");
+  sureshare.classList.toggle("sureshowSharescc");
+}
+
+function shcanceled() {
+  var sureshare = document.getElementById("suresharecld");
+  sureshare.classList.toggle("sureshowSharecld");
+}
 
     </script>
+    <!-- Swiper JS -->
+      <script src="swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+      <script>
+          var swiper = new Swiper('.swiper-container', {
+              effect: 'coverflow',
+              grabCursor: true,
+              centeredSlides: true,
+              slidesPerView: 'auto',
+
+              coverflowEffect: {
+                  rotate: 10,
+                  stretch: 22,
+                  depth: 0,
+                  modifier: 1,
+                  slideShadows : false,
+              },
+          });
+      </script>
           <div class="down-bar">
             <table style="width: 100%;">
                 <tr>

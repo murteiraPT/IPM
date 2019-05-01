@@ -19,6 +19,7 @@
   padding-top: -10px;
 }
 .name{
+  padding-top: -20px;
   padding-left: 10px;
 }
 .theplayer{
@@ -28,7 +29,6 @@
   padding-top: 10;
 }
 #musi{
-  z-index: 10;
   height: 10%;
   width: 20%;
 }
@@ -42,18 +42,17 @@
     font-family: monospace;
     font-size: 18px;
     position: absolute;
-    top:12%;
     left: 20%;
     transform: translate(-50%,-50%);
 }
 .buttons{
     padding-bottom: -30px;
-    height: 50px;
+    height: 150px;
     width: 100%;
     margin-top: 60px;
     position:relative;
     top:20%;
-    left: 10%;
+    left: 20%;
     transform: translate(-50%,-50%);
 }
 .next,.pre{
@@ -106,4 +105,42 @@
     border-radius: 50%;
     margin-left: -5px;
     transform: scale(2);
+}
+
+#share{
+  width: 20px;
+}
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 40px;
+      -webkit-appearance: none;
+      background-color: black;
+    }
+
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 10px;
+      -webkit-appearance: none;
+      color: gray;
+      margin-top: -1px;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      width: 10px;
+      -webkit-appearance: none;
+      height: 10px;
+      cursor: ew-resize;
+      background: gray;
+      box-shadow: -80px 0 0 80px #43e5f7;
+    }
+
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color: gray;
+}
+input[type="range"]::-moz-range-track {
+  background-color: black;
 }

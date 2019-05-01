@@ -60,22 +60,28 @@
               </tr>
           </table>
         </div>
-          <div class="music-icon">
+        <table width ="100%" top ="20px">
+          <tr>
+          <td class="music-icon">
               <img id="musi" src="icons/music-player.png" alt="worldwide">
-            </div>
-          <div class="name">
+            </td>
+            <td >
                 <div id="songTitle">Demo</div>
-          </div>
-
+          </td>
+        </tr>
+        </table>
 
             <table width ="100%" top ="20px">
-              <tr width ="10%">
+              <tr width ="50%">
               </tr>
               <tr>
                 <div id="buttons">
+                      <td align="center" width="70px"><img id="share" src="icons/share.png" onclick="share()"></td>
                       <td align="center"> <img src="Pre.png" onclick="pre()"> </td>
                       <td align="center" id="play"> <img src="Play.png" class="play" onclick="playOrPauseSong()"></td>
                       <td align="center" > <img src="Next.png" onclick="next()"></td>
+                      <td align="center" >     <input type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+
                 </div>
 
               </tr>
@@ -154,15 +160,18 @@
 
 
 
-
-
+        window.SetVolume = function(val)
+      {
+        console.log('Before: ' + song.volume);
+        song.volume = val / 100;
+        console.log('After: ' + song.volume);
+}
 
 
 
 
     </script>
-
-        <div class="down-bar">
+          <div class="down-bar">
             <table style="width: 100%;">
                 <tr>
                   <td width="91%">

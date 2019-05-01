@@ -1,0 +1,10 @@
+.ShareOptions{
+    margin: 8%;
+    padding-left: 33%;
+    padding-bottom: 1%;
+    display: flex;
+    align-items: center;
+}
+.Title{
+    background: #888888;
+}

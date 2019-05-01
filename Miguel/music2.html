@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="music.css">
+    <link rel="stylesheet" type="text/css" href="teste.css">
+
+    <script src="music.js"></script>
+    <script src="changepage.js"></script>
+    <link rel="stylesheet" type="text/css" href="music.css">
+
+
+    <script src="jquery-1.10.2.min.js"></script>
+
+
+</head>
+<body>
+    <div class="screen">
+        <div class="info-bar">
+            <table style="width: 100%;">
+                <tr>
+                  <td width="2%"></td>
+                  <td class="popupM" width="10%", onclick="messagePopUp()">
+                      <img id="notifications" src="icons/alarm.png" width="20px">
+                      <span class="popuptextM" id="messagePopUp">
+                        <div class="titulo">
+                          Notifications
+                        </div>
+                        <br> No new notifications
+                       </span>
+
+                  </td>
+                  <td width="12%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class="top-icons" width="10%">
+                      <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
+                  </td>
+                  <td width="27%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class = "top-text">
+                    <span id="datetime"></span>
+                  </td>
+                  <td width="40%">
+
+                  </td>
+                  <td class="top-icons">
+                      <img id="heart" src="icons/like.png" width="20px">
+                  </td>
+                  <td class="top-text">
+                      <span id= "heartbeat"></span>
+                  </td>
+                  <td width="2%"></td>
+              </tr>
+          </table>
+        </div>
+        <table width ="100%" top ="20px">
+          <tr>
+          <td class="music-icon">
+              <img id="musi" src="icons/music-player.png" alt="worldwide">
+            </td>
+            <td >
+                <div id="songTitle">Demo</div>
+          </td>
+        </tr>
+        </table>
+        <div class="sureshare">
+        <span class="suresharetext" id="sureshare">
+          <div class="titulo">
+            Are you sure you want to share?
+          </div>
+        <table>
+          <tr>
+          <td width="10px"></td>
+            <td width="90px" onclick="share();sureshare();shsuccess()">Yes</td>
+            <td onclick="share();sureshare();shcanceled()">No</td>
+          </tr>
+        </table>
+        </span>
+      </div>
+      <div class="suresharescc">
+      <span class="suresharetextscc" id="suresharescc" onclick="shsuccess()">
+        <div class="titulo">
+          Shared Succesfully!
+        </div>
+      </span>
+    </div>
+
+    <div class="suresharecld">
+    <span class="suresharetextcld" id="suresharecld" onclick="shcanceled()">
+      <div class="titulo">
+        Share Canceled!
+      </div>
+    </span>
+  </div>
+            <table width ="100%" top ="20px">
+              <tr width ="50%">
+              </tr>
+              <tr>
+                <div id="buttons">
+                      <td align="center" width="60px" class="share">
+                          <img id="share" src="icons/share.png" onclick="share()">
+                          <span class="sharetext" id="sharepop">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/feed.png" width="27%" onclick="sureshare()">
+                                        <div>My Feed</div>
+                                    </div>
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/rui.png" width="27%" onclick="sureshare()">
+                                        <div>Rui Silva</div>
+                                    </div>
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/ana.png" width="27%" onclick="sureshare()">
+                                        <div>Ana Nunes</div>
+                                    </div>
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/jorge.png" width="27%" onclick="sureshare()">
+                                        <div>Jorge Costa</div>
+                                    </div>
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/julia.png" width="27%" onclick="sureshare()">
+                                        <div>Julia Palha</div>
+                                    </div>
+                                    <div class="swiper-slide" align="center">
+                                        <img src="icons/rita.png" width="27%" onclick="sureshare()">
+                                        <div>Rita Martins</div>
+                                    </div>
+                                </div>
+                            </div>
+                           </span>
+
+                      </td>
+                      <td align="center"> <img src="Pre.png" onclick="pre()"> </td>
+                      <td align="center" id="play"> <img src="Play.png" class="play" onclick="playOrPauseSong()"></td>
+                      <td align="center" > <img src="Next.png" onclick="next()"></td>
+                      <td align="center" >     <input type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+
+                </div>
+
+              </tr>
+          </table>
+
+                <div id="seek-bar">
+                  <div id="fill"></div>
+                  <div id="handle"></div>
+                </div>
+
+    <script type="text/javascript">
+
+    var songs = ["Artic Monkeys - 505.mp3","DJ Snake - Taki Taki.mp3","Nirvana - All Apologies.mp3"];
+
+        var songTitle = document.getElementById("songTitle");
+        var fillBar = document.getElementById("fill");
+
+        var song = new Audio();
+        var currentSong = 0;    // it point to the current song
+
+        window.onload = playSong;   // it will call the function playSong when window is load
+
+        function playSong(){
+
+            song.src = songs[currentSong];  //set the source of 0th song
+
+            songTitle.textContent = songs[currentSong]; // set the title of song
+
+            song.play();    // play the song
+        }
+
+        function playOrPauseSong(){
+
+            if(song.paused){
+                song.play();
+                $("#play img").attr("src","Pause.png");
+            }
+            else{
+                song.pause();
+                $("#play img").attr("src","Play.png");
+            }
+        }
+
+        song.addEventListener('timeupdate',function(){
+
+            var position = song.currentTime / song.duration;
+
+            fillBar.style.width = position * 100 +'%';
+        });
+
+
+        function next(){
+
+            currentSong++;
+            if(currentSong > 2){
+                currentSong = 0;
+            }
+            playSong();
+            $("#play img").attr("src","Pause.png");
+            $("#image img").attr("src",poster[currentSong]);
+            $("#bg img").attr("src",poster[currentSong]);
+        }
+
+        function pre(){
+
+            currentSong--;
+            if(currentSong < 0){
+                currentSong = 2;
+            }
+            playSong();
+            $("#play img").attr("src","Pause.png");
+            $("#image img").attr("src",poster[currentSong]);
+            $("#bg img").attr("src",poster[currentSong]);
+        }
+
+
+        function picksong(x){
+          currentSong=x;
+          if(currentSong > 2){
+            currentSong = 0;
+          }
+          playSong();
+          $("#play img").attr("src","Pause.png");
+          $("#image img").attr("src",poster[currentSong]);
+          $("#bg img").attr("src",poster[currentSong]);
+
+        }
+
+        window.SetVolume = function(val)
+      {
+        console.log('Before: ' + song.volume);
+        song.volume = val / 100;
+        console.log('After: ' + song.volume);
+}
+
+function share() {
+  var share = document.getElementById("sharepop");
+  share.classList.toggle("showShare");
+}
+
+function sureshare() {
+  var sureshare = document.getElementById("sureshare");
+  sureshare.classList.toggle("sureshowShare");
+}
+
+function shsuccess() {
+  var sureshare = document.getElementById("suresharescc");
+  sureshare.classList.toggle("sureshowSharescc");
+}
+
+function shcanceled() {
+  var sureshare = document.getElementById("suresharecld");
+  sureshare.classList.toggle("sureshowSharecld");
+}
+
+    </script>
+    <!-- Swiper JS -->
+      <script src="swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+      <script>
+          var swiper = new Swiper('.swiper-container', {
+              effect: 'coverflow',
+              grabCursor: true,
+              centeredSlides: true,
+              slidesPerView: 'auto',
+
+              coverflowEffect: {
+                  rotate: 10,
+                  stretch: 22,
+                  depth: 0,
+                  modifier: 1,
+                  slideShadows : false,
+              },
+          });
+      </script>
+          <div class="down-bar">
+            <table style="width: 100%;">
+                <tr>
+                  <td width="91%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class="popup", width="8%", onclick="helpPopUp()">
+                          <img id="bell" src="icons/help.png" width="20px">
+                          <span class="popuptext" id="helpPopUp">
+                            <div class = "titulo">
+                              Help
+                            </div>
+                            <br> - To be Defined
+
+                          </span>
+                  </td>
+
+              </tr>
+          </table>
+        </div>
+
+      </body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

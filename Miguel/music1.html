@@ -219,17 +219,7 @@
         }
 
 
-        function picksong(x){
-          currentSong=x;
-          if(currentSong > 2){
-            currentSong = 0;
-          }
-          playSong();
-          $("#play img").attr("src","Pause.png");
-          $("#image img").attr("src",poster[currentSong]);
-          $("#bg img").attr("src",poster[currentSong]);
 
-        }
 
         window.SetVolume = function(val)
       {

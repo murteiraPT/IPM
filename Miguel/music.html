@@ -104,7 +104,28 @@
               </tr>
               <tr>
                 <div id="buttons">
-                      <td align="center" width="60px" class="share">
+                      <td width="2%"></td>
+                      <td align="center" width="35px" class="list"  onclick="list()" >
+                        <img id="list" src="icons/search.png" width="20px">
+                        <span class="listtext" id="listpop">
+                          <div class="list-container">
+                            <div class="list-wrapper" text-align="right">
+                              <div class="list-slide" onclick="picksong(0)"><li>Artic Monkeys - 505</li></div>
+                              <div class="list-slide" onclick="picksong(3)"><li>Broken Bones - KALEO</li></div>
+
+                              <div class="list-slide" onclick="picksong(4)"><li>DJ Snake - Taki Taki</li></div>
+                              <div class="list-slide" onclick="picksong(2)"><li>Joey Bada$$ - Devastated</li></div>
+
+                              <div class="list-slide" onclick="picksong(5)"><li>Nirvana - All Apologies</li></div>
+                              <div class="list-slide" onclick="picksong(1)"><li>Slow J - Sonhei Para Dentro</li></div>
+
+
+                            </div>
+                          </div>
+                         </span>
+
+                      </td>
+                      <td align="center" width="35px" class="share">
                           <img id="share" src="icons/share.png" onclick="share()">
                           <span class="sharetext" id="sharepop">
                             <div class="swiper-container">
@@ -138,9 +159,10 @@
                            </span>
 
                       </td>
-                      <td align="center"> <img src="Pre.png" onclick="pre()"> </td>
-                      <td align="center" id="play"> <img src="Play.png" class="play" onclick="playOrPauseSong()"></td>
-                      <td align="center" > <img src="Next.png" onclick="next()"></td>
+                      <td width="2%"> </td>
+                      <td align="center" width="20px"> <img src="Pre.png" onclick="pre()"> </td>
+                      <td align="center" id="play" width="20px"> <img src="Play.png" class="play" onclick="playOrPauseSong()"></td>
+                      <td align="center" width="20px" > <img src="Next.png" onclick="next()"></td>
                       <td align="center" >     <input type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
 
                 </div>
@@ -155,7 +177,7 @@
 
     <script type="text/javascript">
 
-    var songs = ["Artic Monkeys - 505.mp3","DJ Snake - Taki Taki.mp3","Nirvana - All Apologies.mp3"];
+    var songs = ["Artic Monkeys - 505.mp3", "Slow J - Sonhei Para Dentro.mp3", "Joey Bada$$ - Devastated.mp3", "Broken Bones - KALEO.mp3", "DJ Snake - Taki Taki.mp3","Nirvana - All Apologies.mp3"];
 
         var songTitle = document.getElementById("songTitle");
         var fillBar = document.getElementById("fill");
@@ -197,7 +219,7 @@
         function next(){
 
             currentSong++;
-            if(currentSong > 2){
+            if(currentSong > 5){
                 currentSong = 0;
             }
             playSong();
@@ -221,7 +243,7 @@
 
         function picksong(x){
           currentSong=x;
-          if(currentSong > 2){
+          if(currentSong > 5){
             currentSong = 0;
           }
           playSong();
@@ -258,6 +280,11 @@ function shcanceled() {
   sureshare.classList.toggle("sureshowSharecld");
 }
 
+
+function list() {
+  var list = document.getElementById("listpop");
+  list.classList.toggle("showList");
+}
     </script>
     <!-- Swiper JS -->
       <script src="swiper.min.js"></script>
@@ -278,6 +305,20 @@ function shcanceled() {
                   slideShadows : false,
               },
           });
+      </script>
+
+
+      <script>
+
+      var swiper2 = new Swiper('.list-container', {
+
+        direction: 'vertical',
+        mousewheelControl: true,
+        slidesPerView: 1,
+        freeMode: true,
+        freeModeSticky: true
+      });
+
       </script>
           <div class="down-bar">
             <table style="width: 100%;">

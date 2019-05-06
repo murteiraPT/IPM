@@ -27,8 +27,8 @@ body {
     width: 320px;
     height: 200px;
     color: #fff;
-    background-color: #000;
-    background-size: 380%;
+    background-image: url(icons/background.jpg);
+    background-size: 490%;
     border-radius: 10px;
     border-style: solid;
 }

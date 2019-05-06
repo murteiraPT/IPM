@@ -15,7 +15,7 @@
 
 .music-icon{
   margin-left: 0;
-  padding-left: 12%;
+  padding-left: 8%;
   padding-top: -10px;
 }
 .name{
@@ -29,8 +29,8 @@
   padding-top: 10;
 }
 #musi{
-  height: 10%;
-  width: 20%;
+  height: 60px;
+  width: 70px;
 }
 #player{
     padding: 25px;
@@ -42,7 +42,7 @@
     font-family: monospace;
     font-size: 18px;
     position: absolute;
-    left: 16%;
+    left: 15%;
     transform: translate(-50%,-50%);
 }
 .buttons{
@@ -54,6 +54,11 @@
     top:20%;
     left: 20%;
     transform: translate(-50%,-50%);
+}
+
+#imgvol{
+  width: 23px;
+  height: 23px;
 }
 .next,.pre{
     width: 50px;
@@ -118,9 +123,12 @@
 @media screen and (-webkit-min-device-pixel-ratio:1) {
     input[type='range'] {
       overflow: hidden;
-      width: 50px;
+      width: 80px;
       -webkit-appearance: none;
-      background-color: black;
+      background: none;
+        transform: rotate(-90deg);
+      margin-right: -17px;
+      margin-top: 17px;
     }
 
     input[type='range']::-webkit-slider-runnable-track {
@@ -313,11 +321,7 @@ input[type="range"]::-moz-range-track {
     width: 100%;
     margin-top: 0px;
 }
-.list-wrapper,
-.list-slide{
-  width: 90%;
-  height: 55%;
-}
+
  .list-slide {
    font-size: 13px;
    background: #555;
@@ -326,7 +330,7 @@ input[type="range"]::-moz-range-track {
    justify-content: left;
    align-items: left;
    padding-left: 20px;
-   padding-top:10px;
+   padding-bottom: 20px;
 }
 
 .list {
@@ -339,7 +343,7 @@ input[type="range"]::-moz-range-track {
 .list .listtext {
   visibility: hidden;
   width: 200px;
-  height: 182px;
+  height: 177px;
   background-color: #555;
   color: #fff;
   text-align: left;
@@ -347,7 +351,7 @@ input[type="range"]::-moz-range-track {
   padding: 8px 0;
   position: absolute;
   z-index: 4;
-  bottom: -85%;
+  top: -218%;
   left: 50%;
   margin-left: -28px;
   font-size: 13px;
@@ -360,4 +364,17 @@ input[type="range"]::-moz-range-track {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
+}
+
+
+div.ex3 {
+  width: 200px;
+  height: 177px;
+  overflow: auto;
+}
+
+#cross {
+  margin-top: 70px;
+  margin-bottom: 2px;
+  margin-right: -85px;
 }

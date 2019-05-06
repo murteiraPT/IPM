@@ -62,11 +62,15 @@
         </div>
         <table width ="100%" top ="20px">
           <tr>
-          <td class="music-icon">
-              <img id="musi" src="icons/music-player.png" alt="worldwide">
+          <td class="music-icon" id="image">
+              <img id="musi" src="icons/505.jpg" alt="worldwide">
             </td>
             <td >
                 <div id="songTitle">Demo</div>
+          </td>
+          <td width="250px">
+            <td align="center" >     <input type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+
           </td>
         </tr>
         </table>
@@ -105,11 +109,12 @@
               <tr>
                 <div id="buttons">
                       <td width="2%"></td>
-                      <td align="center" width="35px" class="list"  onclick="list()" >
-                        <img id="list" src="icons/search.png" width="20px">
+                      <td align="center" width="25px" class="list"   >
+                        <img id="list" src="icons/search.png" width="20px" onclick="list()">
                         <span class="listtext" id="listpop">
-                          <div class="list-container">
-                            <div class="list-wrapper" text-align="right">
+                          <img id="cross" align="right" src="icons/error.png" width="50px" onclick="list()">
+
+                            <div class="ex3">
                               <div class="list-slide" onclick="picksong(0)"><li>Artic Monkeys - 505</li></div>
                               <div class="list-slide" onclick="picksong(3)"><li>Broken Bones - KALEO</li></div>
 
@@ -120,16 +125,21 @@
                               <div class="list-slide" onclick="picksong(1)"><li>Slow J - Sonhei Para Dentro</li></div>
 
 
+
                             </div>
                           </div>
                          </span>
 
                       </td>
-                      <td align="center" width="35px" class="share">
+                      <td align="center" width="25px" class="share">
                           <img id="share" src="icons/share.png" onclick="share()">
                           <span class="sharetext" id="sharepop">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
+                                  <div class="swiper-slide" align="center">
+                                      <img src="icons/error.png" width="40%" onclick="share()">
+                                  </div>
+
                                     <div class="swiper-slide" align="center">
                                         <img src="icons/feed.png" width="27%" onclick="sureshare()">
                                         <div>My Feed</div>
@@ -159,11 +169,11 @@
                            </span>
 
                       </td>
-                      <td width="2%"> </td>
-                      <td align="center" width="20px"> <img src="Pre.png" onclick="pre()"> </td>
+                      <td align="right" width="20px"> <img src="Pre.png" onclick="pre()"> </td>
                       <td align="center" id="play" width="20px"> <img src="Play.png" class="play" onclick="playOrPauseSong()"></td>
-                      <td align="center" width="20px" > <img src="Next.png" onclick="next()"></td>
-                      <td align="center" >     <input type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+                      <td align="left" width="20px" > <img src="Next.png" onclick="next()"></td>
+                      <td width="10px"> </td>
+                      <td align="center" width="35px" id="volume"> <img id="imgvol" src="icons/vol50.png"></td>
 
                 </div>
 
@@ -177,8 +187,8 @@
 
     <script type="text/javascript">
 
-    var songs = ["Artic Monkeys - 505.mp3", "Slow J - Sonhei Para Dentro.mp3", "Joey Bada$$ - Devastated.mp3", "Broken Bones - KALEO.mp3", "DJ Snake - Taki Taki.mp3","Nirvana - All Apologies.mp3"];
-
+      var songs = ["Artic Monkeys - 505.mp3", "Slow J - Sonhei Para Dentro.mp3", "Joey Bada$$ - Devastated.mp3", "Broken Bones - KALEO.mp3", "DJ Snake - Taki Taki.mp3","Nirvana - All Apologies.mp3"];
+        var poster = ["icons/505.jpg","icons/slow.jpg","icons/devastaded.jpg","icons/bones.jpg", "icons/taki.png","icons/nirvana.jpg"];
         var songTitle = document.getElementById("songTitle");
         var fillBar = document.getElementById("fill");
 
@@ -258,6 +268,19 @@
         console.log('Before: ' + song.volume);
         song.volume = val / 100;
         console.log('After: ' + song.volume);
+
+        if(val == 0){
+          $("#volume img").attr("src","icons/vol0.png");
+        }
+        else if(val < 51){
+            $("#volume img").attr("src","icons/vol50.png");
+
+        }else if(val < 100){
+              $("#volume img").attr("src","icons/vol100.png");
+
+        }
+
+
 }
 
 function share() {
@@ -273,6 +296,7 @@ function sureshare() {
 function shsuccess() {
   var sureshare = document.getElementById("suresharescc");
   sureshare.classList.toggle("sureshowSharescc");
+
 }
 
 function shcanceled() {
@@ -284,6 +308,7 @@ function shcanceled() {
 function list() {
   var list = document.getElementById("listpop");
   list.classList.toggle("showList");
+
 }
     </script>
     <!-- Swiper JS -->
@@ -311,14 +336,20 @@ function list() {
       <script>
 
       var swiper2 = new Swiper('.list-container', {
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          direction: 'vertical',
 
-        direction: 'vertical',
-        mousewheelControl: true,
-        slidesPerView: 1,
-        freeMode: true,
-        freeModeSticky: true
+          coverflowEffect: {
+              rotate: 10,
+              stretch: -10,
+              depth: 0,
+              modifier: 1,
+              slideShadows : false,
+          },
       });
-
       </script>
           <div class="down-bar">
             <table style="width: 100%;">
@@ -332,7 +363,12 @@ function list() {
                             <div class = "titulo">
                               Help
                             </div>
-                            <br> - To be Defined
+                            <br> - Search for a Music:
+                            <br> - Share a music;
+                            <br> - Go one music back;
+                            <br> - Pause/Play music;
+                            <br> - Go one music forward;
+                            <br> - Change the music volume.
 
                           </span>
                   </td>

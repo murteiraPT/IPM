@@ -33,6 +33,24 @@ body {
     border-style: solid;
 }
 
+
+.screenshadow {
+    visibility: hidden;
+    width: 320px;
+    height: 200px;
+    background-color: #555;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #FFF;
+    position: absolute;
+    z-index: 3;
+    left: -1px;
+    top: -1px;
+    opacity: 0.5;
+  }
+
+
+
 .time {
     text-align: center;
     font-size: 16px;

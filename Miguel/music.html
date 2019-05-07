@@ -21,6 +21,8 @@
 </head>
 <body>
     <div class="screen">
+      <div class="screenshadow" id="shadow">
+      </div>
         <div class="info-bar">
             <table style="width: 100%;">
                 <tr>
@@ -262,6 +264,7 @@
           $("#bg img").attr("src",poster[currentSong]);
 
         }
+        
 
         window.SetVolume = function(val)
       {
@@ -303,12 +306,21 @@ function shcanceled() {
   var sureshare = document.getElementById("suresharecld");
   sureshare.classList.toggle("sureshowSharecld");
 }
-
+var hide=0;
 
 function list() {
   var list = document.getElementById("listpop");
   list.classList.toggle("showList");
+  var shadow = document.getElementById("shadow");
+  if(hide == 0){
+    shadow.style.visibility = "visible";
+    hide = 1;
+  }
+  else {
+    shadow.style.visibility = "hidden";
+    hide = 0;
 
+  }
 }
     </script>
     <!-- Swiper JS -->

@@ -121,10 +121,14 @@
                               <div class="list-slide" onclick="picksong(3)"><li>Broken Bones - KALEO</li></div>
 
                               <div class="list-slide" onclick="picksong(4)"><li>DJ Snake - Taki Taki</li></div>
+                              <div class="list-slide" onclick="picksong(8)"><li>Elvis Presley - Suspicious Minds</li></div>
+
                               <div class="list-slide" onclick="picksong(2)"><li>Joey Bada$$ - Devastated</li></div>
+                              <div class="list-slide" onclick="picksong(7)"><li>Led Zeppelin - Stairway To Heaven</li></div>
 
                               <div class="list-slide" onclick="picksong(5)"><li>Nirvana - All Apologies</li></div>
                               <div class="list-slide" onclick="picksong(1)"><li>Slow J - Sonhei Para Dentro</li></div>
+                              <div class="list-slide" onclick="picksong(6)"><li>The Beatles - Don't Let Me Down</li></div>
 
 
 
@@ -175,7 +179,7 @@
                       <td align="center" id="play" width="20px"> <img src="Play.png" class="play" onclick="playOrPauseSong()"></td>
                       <td align="left" width="20px" > <img src="Next.png" onclick="next()"></td>
                       <td width="10px"> </td>
-                      <td align="center" width="35px" id="volume"> <img id="imgvol" src="icons/vol50.png"></td>
+                      <td align="center" width="35px" id="volume"> <img id="imgvol" src="icons/vol50.png" onclick="mute()"></td>
 
                 </div>
 
@@ -189,8 +193,8 @@
 
     <script type="text/javascript">
 
-      var songs = ["Artic Monkeys - 505.mp3", "Slow J - Sonhei Para Dentro.mp3", "Joey Bada$$ - Devastated.mp3", "Broken Bones - KALEO.mp3", "DJ Snake - Taki Taki.mp3","Nirvana - All Apologies.mp3"];
-        var poster = ["icons/505.jpg","icons/slow.jpg","icons/devastaded.jpg","icons/bones.jpg", "icons/taki.png","icons/nirvana.jpg"];
+      var songs = ["Artic Monkeys - 505.mp3", "Slow J - Sonhei Para Dentro.mp3", "Joey Bada$$ - Devastated.mp3", "Broken Bones - KALEO.mp3", "DJ Snake - Taki Taki.mp3","Nirvana - All Apologies.mp3", "The Beatles - Don't Let Me Down.mp3", "Led Zeppelin - Stairway To Heaven.mp3", "Elvis Presley - Suspicious Minds.mp3"];
+        var poster = ["icons/505.jpg","icons/slow.jpg","icons/devastaded.jpg","icons/bones.jpg", "icons/taki.png","icons/nirvana.jpg", "icons/beatles.jpg", "icons/led.jpg", "icons/elvis.jpg"];
         var songTitle = document.getElementById("songTitle");
         var fillBar = document.getElementById("fill");
 
@@ -225,13 +229,15 @@
             var position = song.currentTime / song.duration;
 
             fillBar.style.width = position * 100 +'%';
+            if(position==1)
+              next();
         });
 
 
         function next(){
 
             currentSong++;
-            if(currentSong > 5){
+            if(currentSong > 8){
                 currentSong = 0;
             }
             playSong();
@@ -244,7 +250,7 @@
 
             currentSong--;
             if(currentSong < 0){
-                currentSong = 5;
+                currentSong = 8;
             }
             playSong();
             $("#play img").attr("src","Pause.png");
@@ -255,7 +261,7 @@
 
         function picksong(x){
           currentSong=x;
-          if(currentSong > 5){
+          if(currentSong > 8){
             currentSong = 0;
           }
           playSong();
@@ -264,12 +270,14 @@
           $("#bg img").attr("src",poster[currentSong]);
 
         }
-        
+
+        var sound = 50;
 
         window.SetVolume = function(val)
       {
         console.log('Before: ' + song.volume);
         song.volume = val / 100;
+        sound = val;
         console.log('After: ' + song.volume);
 
         if(val == 0){
@@ -299,6 +307,38 @@ function sureshare() {
 function shsuccess() {
   var sureshare = document.getElementById("suresharescc");
   sureshare.classList.toggle("sureshowSharescc");
+
+}
+
+var muted = 0;
+
+function mute(){
+  if(muted == 0){
+    muted = 1;
+    $("#volume img").attr("src","icons/vol0.png");
+    console.log('Before: ' + song.volume);
+    song.volume = 0;
+    console.log('After: ' + song.volume);
+
+  }else{
+
+    muted = 0;
+    if(sound == 0){
+      $("#volume img").attr("src","icons/vol0.png");
+    }
+    else if(sound < 51){
+        $("#volume img").attr("src","icons/vol50.png");
+
+    }else if(sound < 100){
+          $("#volume img").attr("src","icons/vol100.png");
+
+    }
+
+    console.log('Before: ' + song.volume);
+    song.volume = sound/100;
+    console.log('After: ' + song.volume);
+
+  }
 
 }
 

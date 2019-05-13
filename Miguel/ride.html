@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="map.css">
+
+    <script src="changepage.js"></script>
+
+
+    <script src="jquery-1.10.2.min.js"></script>
+
+
+</head>
+<body>
+    <div class="screen">
+      <div class="screenshadow" id="shadow">
+      </div>
+      <img id="back" src="icons/back.png" width="1,568‬px">
+
+        <div class="info-bar">
+            <table style="width: 100%;">
+                <tr>
+                  <td width="2%"></td>
+                  <td class="popupM" width="10%", onclick="messagePopUp()">
+                      <img id="notifications" src="icons/alarm.png" width="20px">
+                      <span class="popuptextM" id="messagePopUp">
+                        <div class="titulo">
+                          Notifications
+                        </div>
+                        <br> No new notifications
+                       </span>
+
+                  </td>
+                  <td width="12%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class="top-icons" width="10%">
+                      <img id="home" src="icons/house-outline.png" width="20px" onclick="goToMainMenu()">
+                  </td>
+                  <td width="27%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class = "top-text">
+                    <span id="datetime"></span>
+                  </td>
+                  <td width="40%">
+
+                  </td>
+                  <td class="top-icons">
+                      <img id="heart" src="icons/like.png" width="20px">
+                  </td>
+                  <td class="top-text">
+                      <span id= "heartbeat"></span>
+                  </td>
+                  <td width="2%"></td>
+              </tr>
+          </table>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img id="map" src="icons/map.png" width="100%">
+                </div>
+                <div class="swiper-slide">
+                    <img id="translate" src="icons/worldwide.png" width="100%" onclick="goToTranslator()">
+                </div>
+                <div class="swiper-slide">
+                    <img id="music-player" src="icons/music-player.png" width="100%" onclick="goToMusic()">
+                </div>
+                <div class="swiper-slide">
+                    <img id="settings" src="icons/settings.png" width="100%">
+                </div>
+            </div>
+        </div>
+
+        <table width ="100%" top ="20px">
+        </table>
+         <div class="down-bar">
+            <table style="width: 100%;">
+                <tr>
+                  <td width="91%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class="popup", width="8%", onclick="helpPopUp()">
+                          <img id="bell" src="icons/help.png" width="20px">
+                          <span class="popuptext" id="helpPopUp">
+                            <div class = "titulo">
+                              Help
+                            </div>
+                            <br> - To be defined
+
+                          </span>
+                  </td>
+
+              </tr>
+          </table>
+        </div>
+
+
+
+          <!-- Swiper JS -->
+            <script src="swiper.min.js"></script>
+
+          <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                    effect: 'coverflow',
+                    grabCursor: true,
+                    centeredSlides: true,
+                    slidesPerView: 'auto',
+
+                    coverflowEffect: {
+                        rotate: 10,
+                        stretch: -12,
+                        depth: 100,
+                        modifier: 3,
+                        slideShadows : false,
+                    },
+                });
+            </script>
+
+      </body>
+
+
+</html>

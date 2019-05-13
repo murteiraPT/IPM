@@ -37,12 +37,12 @@
     color:#333;
 }
 #songTitle{
-    width:200px;
+    width:180px;
     color: white;
     font-family: monospace;
-    font-size: 18px;
+    font-size: 16px;
     position: absolute;
-    left: 15%;
+    left: 14%;
     transform: translate(-50%,-50%);
 }
 .buttons{
@@ -202,7 +202,9 @@ input[type="range"]::-moz-range-track {
   cursor: pointer;
   z-index: 4;
 }
-
+#heartbeat{
+  z-index: 5;
+}
 /* The actual popup (appears on top) */
 .suresharescc .suresharetextscc {
   visibility: hidden;

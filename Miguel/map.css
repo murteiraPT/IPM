@@ -56,7 +56,7 @@ body {
 .screen .map {
   width: 100%;
   height: 70%;
-  overflow: scroll;
+  overflow: hidden;
 
 }
 

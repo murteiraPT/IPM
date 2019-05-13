@@ -1,0 +1,38 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+
+<div class="col-sm-7 text">
+  <h1><strong>Div for the images</strong></h1>
+  <div class="description">
+    <div id="myDiagramDiv" draggable="true" style="width:600px; height:400px; background-color: #DAE4E4;"></div>
+  </div>
+</div>
+<div class="col-sm-5 text">
+  <div class="description">
+    <h1><strong>Text</strong></h1>
+  </div>
+  <button type="button" class="btn-primary" onclick="addimage();">Dodaj sto za 2 osobe</button>
+  <button type="button" class="btn-primary" onclick="addimage();">Dodaj sto za 4 osobe</button>
+  <button type="button" class="btn-primary" onclick="addimage();">Dodaj sto za vise od 4 osobe</button>
+</div>
+
+
+
+
+
+
+<script>
+function addimage() {
+  var img = document.createElement("img");
+  img.src = "http://bricksplayground.webs.com/brick.PNG";
+  img.height = 50;
+  img.width = 100;
+
+  var class_name = "foo";
+  img.setAttribute("class", class_name);
+
+  document.getElementById("myDiagramDiv").appendChild(img);
+   $(img).draggable();
+}
+</script>

@@ -7,7 +7,7 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="swiper.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="map.css">
+    <link rel="stylesheet" type="text/css" href="ride.css">
 
     <script src="changepage.js"></script>
 
@@ -63,18 +63,26 @@
         </div>
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img id="map" src="icons/map.png" width="100%">
+                <div class="swiper-slide" align="center">
+                    <img src="icons/error.png" width="40%" onclick="share()">
                 </div>
-                <div class="swiper-slide">
-                    <img id="translate" src="icons/worldwide.png" width="100%" onclick="goToTranslator()">
+
+                <div class="swiper-slide" align="center">
+                    <img id="uber" src="icons/uber.png" width="100%">
                 </div>
-                <div class="swiper-slide">
-                    <img id="music-player" src="icons/music-player.png" width="100%" onclick="goToMusic()">
+                <div class="swiper-slide" align="center">
+                    <img id="bolt" src="icons/bolt.png" width="100%" onclick="goToTranslator()">
                 </div>
-                <div class="swiper-slide">
-                    <img id="settings" src="icons/settings.png" width="100%">
+                <div class="swiper-slide" align="center">
+                    <img id="taxi" src="icons/mytaxi.png" width="100%" onclick="goToMusic()">
                 </div>
+                <div class="swiper-slide" align="center">
+                    <img id="horse" src="icons/horse.png" width="100%">
+                </div>
+                <div class="swiper-slide" align="center">
+                    <img id="tuktuk" src="icons/tuktuk.png" width="100%">
+                </div>
+
             </div>
         </div>
 

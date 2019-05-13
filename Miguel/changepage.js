@@ -3,6 +3,9 @@ function goToTranslator() {
     window.location.href = "translator.html";
 }
 
+function goToMap() {
+    window.location.href = "map.html";
+}
 
 function goToMusic() {
     window.location.href = "music.html";

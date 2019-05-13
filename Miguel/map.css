@@ -55,8 +55,8 @@ body {
 
 .screen .map {
   width: 100%;
-  height: 130%;
-  overflow: hidden;
+  height: 70%;
+  overflow: scroll;
 
 }
 
@@ -80,7 +80,7 @@ body {
 }
 
 .down-bar {
-    padding-top: 1px;
+    padding-top: -15px;
 }
 
 .middle-section{
@@ -95,6 +95,7 @@ body {
   display: inline-block;
   cursor: pointer;
   z-index: 2;
+  margin-top: -8px;
 }
 
 /* The actual popup (appears on top) */

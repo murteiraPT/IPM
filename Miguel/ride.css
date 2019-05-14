@@ -181,3 +181,33 @@ body {
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
 }
+.popupI {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* The actual popup (appears on top) */
+.popupI .popuptextI {
+  visibility: hidden;
+  width: 190px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150px;
+  left: 0%;
+  margin-left: 60px;
+  font-size: 13px;
+
+}
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popupI .show{
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}

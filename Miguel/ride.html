@@ -79,7 +79,7 @@
                 <div class="swiper-slide" align="center">
                   <div width="100%" height="30%">
 
-                    <img id="horse" src="icons/horse1.png" width="30px" height="30px" onclick="goToHorse1()">
+                    <img id="horse" src="icons/horse1.png" width="30px" height="30px" onclick="indisponivel()">
                   </div>
 
                     <a> Horse </a>
@@ -101,7 +101,7 @@
                 <div class="swiper-slide" align="center">
                   <div width="100%" height="30%">
 
-                    <img id="heli" src="icons/heli.png" width="30px" height="30px" onclick="goToHeli()">
+                    <img id="heli" src="icons/heli.png" width="30px" height="30px" onclick="indisponivel()">
                   </div>
 
                     <a> Helicopter </a>
@@ -136,7 +136,13 @@
               </tr>
           </table>
         </div>
+<script>
+function indisponivel() {
+  var popup = document.getElementById("messagePopUpI");
+  popup.classList.toggle("show");
+}
 
+</script>
         <script>
         window.onload =  function randomize(){
           var vtime = Math.random();
@@ -205,6 +211,13 @@
                 });
             </script>
 
+            <div class="popupI">
+              <span class="popuptextI" id="messagePopUpI" onclick="indisponivel()">
+                <div class="titulo">
+                  Not Available at the Moment!
+                </div>
+              </span>
+            </div>
       </body>
 
 

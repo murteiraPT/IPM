@@ -64,12 +64,12 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" align="center">
-                    <img src="icons/error.png" width="40%" onclick="share()">
+                    <img src="icons/error.png" width="60%" onclick="goToMap()">
                 </div>
 
                 <div class="swiper-slide" align="center">
                   <div width="100%" height="30%">
-                    <img id="uber" src="icons/uber1.png" width="30px">
+                    <img id="uber" src="icons/uber1.png"width="30px" height="30px" onclick="goToUber()">
                   </div>
 
                     <a> Uber </a>
@@ -79,29 +79,7 @@
                 <div class="swiper-slide" align="center">
                   <div width="100%" height="30%">
 
-                    <img id="bolt" src="icons/bolt.png" width="30px">
-                  </div>
-
-                    <a> Bolt </a>
-                    <br> <span id= "Price2"></span>€
-                    <br> <span id="Time2"></span>min
-
-                </div>
-                <div class="swiper-slide" align="center">
-                  <div width="100%" height="30%">
-
-                    <img id="taxi" src="icons/mytaxi.png" width="30px">
-                  </div>
-
-                    <a> Taxi </a>
-                    <br> <span id= "Price3"></span>€
-                    <br> <span id="Time3"></span>min
-
-                </div>
-                <div class="swiper-slide" align="center">
-                  <div width="100%" height="30%">
-
-                    <img id="horse" src="icons/horse1.png" width="30px">
+                    <img id="horse" src="icons/horse1.png" width="30px" height="30px" onclick="goToHorse1()">
                   </div>
 
                     <a> Horse </a>
@@ -112,7 +90,7 @@
                 <div class="swiper-slide" align="center">
                   <div width="100%" height="30%">
 
-                    <img id="tuktuk" src="icons/tuk-tuk1.png" width="30px">
+                    <img id="tuktuk" src="icons/tuk-tuk.png" width="30px" height="30px" onclick="goToTuk()">
                   </div>
 
                     <a> Tuk tuk </a>
@@ -120,6 +98,18 @@
                     <br> <span id="Time5"></span>min
 
                 </div>
+                <div class="swiper-slide" align="center">
+                  <div width="100%" height="30%">
+
+                    <img id="heli" src="icons/heli.png" width="30px" height="30px" onclick="goToHeli()">
+                  </div>
+
+                    <a> Helicopter </a>
+                    <br> <span id= "Price6"></span>€
+                    <br> <span id="Time6"></span>min
+
+                </div>
+
 
             </div>
         </div>
@@ -148,7 +138,51 @@
         </div>
 
         <script>
+        window.onload =  function randomize(){
+          var vtime = Math.random();
+          var vprice = Math.random();
+          var vtime4 = Math.random();
+          var vprice4 = Math.random();
+          var vtime5 = Math.random();
+          var vprice5 = Math.random();
+          var vtime6 = Math.random();
+          var vprice6 = Math.random();
+          var vtime7 = Math.random();
+          var vprice7 = Math.random();
 
+
+
+
+
+
+          time = Math.round(vtime*60)
+          price = 3 + Math.round(vprice * 100) / 100;
+          document.getElementById("Time1").innerHTML = "3:" + time;
+          document.getElementById("Price1").innerHTML = price;
+
+
+          time4 = Math.round(vtime4*60)
+          price4 = 60 + Math.round(vprice4 * 100) / 100;
+          document.getElementById("Time4").innerHTML = "12:" + time4;
+          document.getElementById("Price4").innerHTML = price4;
+
+          time5 = Math.round(vtime5*60)
+          price5 = 5 + Math.round(vprice5 * 100) / 100;
+          document.getElementById("Time5").innerHTML = "5:" + time5;
+          document.getElementById("Price5").innerHTML = price5;
+
+          time6 = Math.round(vtime6*60)
+          price6 = 100 + Math.round(vprice6 * 100) / 100;
+          document.getElementById("Time6").innerHTML = "2:" + time6;
+          document.getElementById("Price6").innerHTML = price6;
+
+
+
+
+
+        }
+
+</script>
 
           <!-- Swiper JS -->
             <script src="swiper.min.js"></script>

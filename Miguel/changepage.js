@@ -7,6 +7,22 @@ function goToMap() {
     window.location.href = "map.html";
 }
 
+function goToUber() {
+    window.location.href = "cars.html";
+}
+
+function goToHeli() {
+    window.location.href = "heli.html";
+}
+
+function goToTuk() {
+    window.location.href = "tuk.html";
+}
+
+function goToHorse1() {
+    window.location.href = "horse.html";
+}
+
 function goToMusic() {
     window.location.href = "music.html";
 }

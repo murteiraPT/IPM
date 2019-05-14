@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" type="text/css" href="teste.css">
+    <link rel="stylesheet" type="text/css" href="driver.css">
+
+    <script src="changepage.js"></script>
+
+</head>
+
+<body>
+    <div class="screen">
+      <div class="info-bar">
+          <table style="width: 100%;">
+              <tr>
+                <td width="2%"></td>
+                <td class="popupM" width="10%", onclick="messagePopUp()">
+                    <img id="notifications" src="icons/alarm.png" width="20px">
+                    <span class="popuptextM" id="messagePopUp">
+                      <div class="titulo">
+                        Notifications
+                      </div>
+                      <br> No new notifications
+                     </span>
+
+                </td>
+                <td width="54%">
+                    <!-- espaço em branco na top bar -->
+                </td>
+                <td class = "top-text">
+                  <span id="datetime"></span>
+                </td>
+                <td width="40%">
+
+                </td>
+                <td class="top-icons">
+                    <img id="heart" src="icons/like.png" width="20px">
+                </td>
+                <td class="top-text">
+                      <span id= "heartbeat"></span>
+                </td>
+                <td width="2%"></td>
+            </tr>
+        </table>
+      </div>
+    <table style="width: 100%;">
+		<tr>
+			<td id="driver2">
+				<img id="driver" src="icons/driver1.jpg" width="120px" height="120px">
+			</td>
+			<td>
+				<div id="name">
+					José Tribolet 5.1/5
+					<img src="icons/rate-star.png" width="18px">
+				</div>
+				<br>
+
+				<div id="matricula">
+					11-MT-69
+					<br>
+        </div>
+        <div id ="car">
+					Fiat Tribolenda
+				</div>
+
+
+			</td>
+		</tr>
+
+    </table>
+    <div class="sureshare">
+    <span class="suresharetext" id="sureshare">
+      <div class="titulo">
+        Are you sure you want to call a ride?
+      </div>
+    <table>
+      <tr>
+      <td width="10px"></td>
+        <td width="90px" onclick="share();sureshare();shsuccess()">Yes</td>
+        <td onclick="share();sureshare();shcanceled()">No</td>
+      </tr>
+    </table>
+    </span>
+  </div>
+  <div class="suresharescc">
+  <span class="suresharetextscc" id="suresharescc" onclick="shsuccess()">
+    <div class="titulo">
+      Ride Chosen!
+    </div>
+  </span>
+</div>
+
+
+
+        <div class="down-bar">
+            <table style="width: 100%;">
+              <tr>
+                <td width ="8%">
+                  <img id="error" src="icons/error.png" width="20px">
+
+                </td>
+                <td width="83%">
+                    <!-- espaço em branco na top bar -->
+                </td>
+
+                  <td class="popup", width="8%", onclick="helpPopUp()">
+                          <img id="bell" src="icons/help.png" width="20px">
+                          <span class="popuptext" id="helpPopUp">
+                            <div class="titulo">
+                             Help
+                           </div>
+                            <br> - Swipe to pick a Menu
+                          </span>
+                  </td>
+
+              </tr>
+          </table>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+    window.onload =  function driver(){
+
+      var minNumber = 0; // The minimum number you want
+      var maxNumber = 3; // The maximum number you want
+      var i = Math.floor(Math.random() * (maxNumber + 1) + minNumber); // Generates random number
+
+      	var name = ["José Tribolet 5.1/5", "Nerea Olabe 5.0/5", "Cavaco Silva 3.0/5", "Gabriel Pestana 4.9/5"];
+      	var matricula = ["11-69-MT", "54-OP-12", "39-JM-57", "78-KS-42"];
+        var car = ["Fiat Tribolenda", "Bentley Continental", "Citroen Diane", "Fiat 500"];
+        var image =["icons/driver1.jpg", "icons/driver2.jpg", "icons/driver3.jpg", "icons/driver4.jpg", ]
+
+
+        document.getElementById("name").innerHTML = name[i];
+        document.getElementById("matricula").innerHTML = matricula[i];
+        document.getElementById("car").innerHTML = car[i];
+        document.getElementById("driver").src = image[i];
+
+}
+function share() {
+  var share = document.getElementById("sharepop");
+  share.classList.toggle("showShare");
+}
+
+function sureshare() {
+  var sureshare = document.getElementById("sureshare");
+  sureshare.classList.toggle("sureshowShare");
+}
+
+function shsuccess() {
+  var sureshare = document.getElementById("suresharescc");
+  sureshare.classList.toggle("sureshowSharescc");
+
+}
+
+function shcanceled() {
+  var sureshare = document.getElementById("suresharecld");
+  sureshare.classList.toggle("sureshowSharecld");
+}
+
+	</script>
+</body>
+</html>

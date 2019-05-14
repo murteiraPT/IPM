@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="teste.css">
+    <script src="changepage.js"></script>
+
+</head>
+
+<body>
+    <div class="screen">
+      <div class="info-bar">
+          <table style="width: 100%;">
+              <tr>
+                <td width="2%"></td>
+                <td class="popupM" width="10%", onclick="messagePopUp()">
+                    <img id="notifications" src="icons/alarm.png" width="20px">
+                    <span class="popuptextM" id="messagePopUp">
+                      <div class="titulo">
+                        Notifications
+                      </div>
+                      <br> No new notifications
+                     </span>
+
+                </td>
+                <td width="54%">
+                    <!-- espaço em branco na top bar -->
+                </td>
+                <td class = "top-text">
+                  <span id="datetime"></span>
+                </td>
+                <td width="40%">
+
+                </td>
+                <td class="top-icons">
+                    <img id="heart" src="icons/like.png" width="20px">
+                </td>
+                <td class="top-text">
+                      <span id= "heartbeat"></span>
+                </td>
+                <td width="2%"></td>
+            </tr>
+        </table>
+      </div>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img  src="icons/horse15.png" width="100%">
+                </div>
+                <div class="swiper-slide">
+                    <img src="icons/horse16.png" width="100%" >
+                </div>
+                <div class="swiper-slide">
+                    <img src="icons/horse10.png" width="100%" >
+                </div>
+                <div class="swiper-slide">
+                    <img  src="icons/horse12.png" width="100%" >
+                </div>
+                <div class="swiper-slide">
+                    <img  src="icons/horse13.png" width="100%">
+                </div>
+                <div class="swiper-slide">
+                    <img  src="icons/horse14.png" width="100%" >
+                </div>
+                <div class="swiper-slide">
+                    <img  src="icons/horse17.png" width="100%">
+                </div>
+                <div class="swiper-slide">
+                    <img src="icons/horse18.png" width="100%" >
+                </div>
+                <div class="swiper-slide">
+                    <img  src="icons/horse19.png" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="down-bar">
+            <table style="width: 100%;">
+                <tr>
+                  <td width="91%">
+                      <!-- espaço em branco na top bar -->
+                  </td>
+                  <td class="popup", width="8%", onclick="helpPopUp()">
+                          <img id="bell" src="icons/help.png" width="20px">
+                          <span class="popuptext" id="helpPopUp">
+                            <div class="titulo">
+                             Help
+                           </div>
+                            <br> - Swipe to pick a Menu
+                          </span>
+                  </td>
+
+              </tr>
+          </table>
+        </div>
+
+    </div>
+
+  <!-- Swiper JS -->
+    <script src="swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+
+            coverflowEffect: {
+                rotate: 10,
+                stretch: -12,
+                depth: 100,
+                modifier: 3,
+                slideShadows : false,
+            },
+        });
+    </script>
+</body>
+</html>

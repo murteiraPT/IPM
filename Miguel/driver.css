@@ -1,0 +1,165 @@
+.driver{
+    padding-left: -300px;
+}
+
+#title{
+    font-size: 20px;
+
+}
+
+#matricula{
+    font-size: 16px;
+}
+
+#rating{
+    font-size: 20px;
+}
+
+#error{
+  margin-left: 3px;
+}
+
+.share {
+  position: relative;
+  cursor: pointer;
+  z-index: 4;
+}
+
+/* The actual popup (appears on top) */
+.share .sharetext {
+  visibility: hidden;
+  width: 319px;
+  height: 40px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 4;
+  bottom: -80%;
+  left: 50%;
+  margin-left: -61px;
+  font-size: 13px;
+
+}
+
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.share .showShare {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+
+.suresharescc {
+  position: relative;
+  cursor: pointer;
+  z-index: 4;
+}
+#heartbeat{
+  z-index: 5;
+}
+/* The actual popup (appears on top) */
+.suresharescc .suresharetextscc {
+  visibility: hidden;
+  width: 150px;
+  height: 30px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 4;
+  bottom: -90%;
+  left: 50%;
+  margin-left: -70px;
+  font-size: 13px;
+
+}
+
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.suresharescc .sureshowSharescc {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+.suresharecld {
+  position: relative;
+  cursor: pointer;
+  z-index: 4;
+}
+
+/* The actual popup (appears on top) */
+.suresharecld .suresharetextcld {
+  visibility: hidden;
+  width: 150px;
+  height: 30px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 4;
+  bottom: -90%;
+  left: 50%;
+  margin-left: -70px;
+  font-size: 13px;
+
+}
+
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.suresharecld .sureshowSharecld {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+.sureshare {
+  position: relative;
+  cursor: pointer;
+  z-index: 4;
+}
+
+/* The actual popup (appears on top) */
+.sureshare .suresharetext {
+  visibility: hidden;
+  width: 150px;
+  height: 50px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 4;
+  bottom: -50%;
+  left: 50%;
+  margin-left: -70px;
+  font-size: 13px;
+
+}
+
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.sureshare .sureshowShare {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}

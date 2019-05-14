@@ -6,7 +6,21 @@ body {
     margin: 0;
     padding: 0;
 }
+#mydiv {
+ position: absolute;
+ z-index: 9;
+ background-color: #f1f1f1;
+ border: 1px solid #d3d3d3;
+ text-align: center;
+}
 
+#mydivheader {
+ padding: 10px;
+ cursor: move;
+ z-index: 100;
+ background-color: #2196F3;
+ color: #fff;
+}
 .titulo{
   text-align: center;
 }
@@ -48,13 +62,19 @@ body {
     top: -1px;
     opacity: 0.5;
   }
+  #loc{
+	position: absolute;
+   top: 10%;
+    left: 10.5%;
+    z-index: 100; }
 
 #map {
-  	left: -2000px;
+  	left: -125%;
   	pointer-events: none;
-  	position: relative;
-  	top: -1000px;
+  	position: absolute;
+  	top: -150%;
   	-moz-user-select: none;
+    z-index: 5
   }
 
 .screen .map {
@@ -98,7 +118,7 @@ body {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  z-index: 2;
+  z-index:2222;
   margin-top: -8px;
 }
 
@@ -112,7 +132,7 @@ body {
   border-radius: 6px;
   padding: 8px 0;
   position: absolute;
-  z-index: 1;
+  z-index:2222;
   bottom: 20%;
   left: 50%;
   margin-left: -195px;
@@ -154,7 +174,7 @@ body {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  z-index: 2;
+  z-index:2222;
 }
 
 /* The actual popup (appears on top) */
@@ -167,7 +187,7 @@ body {
   border-radius: 6px;
   padding: 8px 0;
   position: absolute;
-  z-index: 1;
+  z-index:2222;
   top: 100%;
   left: 10%;
   margin-left: -5px;

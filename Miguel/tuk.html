@@ -72,18 +72,18 @@
 
       					<br>
               </div>
-              <img src="icons/car.png" width="20px"><a id="car"></a>
-              <br>
-              <div id="name">
-            <div id=yolo><br><br></div>
+                <img src="icons/car.png" width="20px"><a id="car"></a>
+                <br>
+                <div id="name">
+              <div id=yolo><br><br></div>
+              </div>
+              <div id="afterend2">
+              <img src="icons/hourglass.png" width="18px"><a id="demo"></a>
             </div>
-            <div id="afterend2">
-            <img src="icons/hourglass.png" width="18px"><a id="demo"></a>
-          </div>
-          <div id="finalrating">
+            <div id="finalrating">
 
-              <a id="rating">Rate your Driver:<a><br>
-<div class="popupR">
+                <a id="rating">Rate your Driver:<a><br>
+  <div class="popupR">
 <img src="icons/rate-star.png" width="18px" onclick="rate()">
 <img src="icons/rate-star.png" width="18px" onclick="rate()">
 <img src="icons/rate-star.png" width="18px" onclick="rate()">
@@ -91,38 +91,38 @@
 <img src="icons/rate-star.png" width="18px" onclick="rate()">
 
 <span class="popuptextR" id="messagePopUpR" onclick="goToMap()">
-<div class="titulo">
-  Thank you for Rating and choosing MyRide!
-  <br> Have a nice day!
-</div>
-</span>
-</div>
-          </td>
-          </div>
-
-        </tr>
-
-  </table>
-  <div class="sureshare">
-  <span class="suresharetext" id="sureshare">
-    <div class="titulo">
-      Are you sure you want to cancel your ride?
-    </div>
-  <table>
-    <tr>
-    <td width="10px"></td>
-      <td width="90px" onclick="sureshare();shsuccess()">Yes</td>
-      <td onclick="sureshare()">No</td>
-    </tr>
-  </table>
-  </span>
-</div>
-<div class="suresharescc">
-<span class="suresharetextscc" id="suresharescc" onclick="goToMap()">
   <div class="titulo">
-    Ride Canceled!
+    Thank you for Rating and choosing MyRide!
+    <br> Have a nice day!
   </div>
-</span>
+ </span>
+</div>
+      			</td>
+            </div>
+
+      		</tr>
+
+    </table>
+    <div class="sureshare">
+    <span class="suresharetext" id="sureshare">
+      <div class="titulo">
+        Are you sure you want to cancel your ride?
+      </div>
+    <table>
+      <tr>
+      <td width="10px"></td>
+        <td width="90px" onclick="sureshare();shsuccess()">Yes</td>
+        <td onclick="sureshare()">No</td>
+      </tr>
+    </table>
+    </span>
+  </div>
+  <div class="suresharescc">
+  <span class="suresharetextscc" id="suresharescc" onclick="goToMap()">
+    <div class="titulo">
+      Ride Canceled!
+    </div>
+  </span>
 </div>
 
 
@@ -161,12 +161,12 @@
       var maxNumber = 3; // The maximum number you want
       var i = Math.floor(Math.random() * (maxNumber + 1) + minNumber); // Generates random number
 
-      	var name = ["José Tribolet", "Nerea Olabe", "Cavaco Silva", "Gabriel Pestana"];
-        var estrela = ["   5.1/5", "   5.0/5", "   3.0/5", "   4.9/5"];
+      	var name = ["António Gonzalez", "Sofia Vergara", "José Bandeiras", "Juan Gomez"];
+        var estrela = ["   4.9/5", "   5.0/5", "   4.7/5", "   4.9/5"];
 
-      	var matricula = ["   11-69-MT", "   54-OP-12", "   39-JM-57", "   78-KS-42"];
-        var car = ["   Fiat Tribolenda", "   Bentley Continental", "   Citroen Diane", "   Fiat 500"];
-        var image =["icons/driver1.jpg", "icons/driver2.jpg", "icons/driver3.jpg", "icons/driver4.jpg", ]
+      	var matricula = ["   53-12-FA", "   41-JL-14", "   52-JM-34", "   63-BS-42"];
+        var car = ["   4 Lugares", "   4 Lugares", "   2 Lugares", "   3 Lugares"];
+        var image =["icons/driver5.jpg", "icons/driver6.jpg", "icons/driver7.jpg", "icons/driver8.jpg", ]
 
 
         document.getElementById("name").innerHTML = name[i];
@@ -288,6 +288,12 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
+
+
+
+
+
+
 <div id="start" onclick="hidebutton()">
   Start
 </div>

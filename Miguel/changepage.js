@@ -7,6 +7,10 @@ function goToMap() {
     window.location.href = "map.html";
 }
 
+function goToEnd() {
+    window.location.href = "end.html";
+}
+
 function goToUber() {
     window.location.href = "cars.html";
 }
@@ -29,6 +33,10 @@ function goToMusic() {
 
 function goToMainMenu() {
     window.location.href = "teste.html";
+}
+
+function goToRide() {
+    window.location.href = "ride.html";
 }
 
 function helpPopUp() {

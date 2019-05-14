@@ -18,6 +18,8 @@
 </head>
 <body>
     <div class="screen">
+      <img id="loc" src="icons/loc.png" width="20px" onclick="goToRide()">
+
       <div class="screenshadow" id="shadow">
       </div>
         <div class="info-bar">
@@ -61,11 +63,90 @@
         </div>
         <div id="image-container">
           <div class="map" draggable="true">
-            <img id="map" src="icons/mapaf.png" width="300%" draggable="true">
+            <img id="map" src="icons/mapaf.png" width="1250px" draggable="true">
           </div>
         </div>
 
         <script>
+
+
+        function zoomin(){
+            var myImg = document.getElementById("map");
+            var currWidth = myImg.clientWidth;
+            if(currWidth > 2099){
+            } else{
+                myImg.style.width = (currWidth + 50) + "px";
+            }
+
+            limit();
+        }
+        function zoomout(){
+            var myImg = document.getElementById("map");
+            var currWidth = myImg.clientWidth;
+            if(currWidth < 401){
+            } else{
+                myImg.style.width = (currWidth - 50) + "px";
+            }
+            limit();
+        }
+
+
+
+
+
+
+</script>
+<script>
+// Make the DIV element draggable:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+<script>
+
+
+    window.onload =   function limit(){
+
+
         var _DRAGGGING_STARTED = 0;
         var _LAST_MOUSEMOVE_POSITION = { x: null, y: null };
         var _DIV_OFFSET = $('#image-container').offset();
@@ -135,14 +216,28 @@
 
         		$("#map").css({ top: img_top_new + 'px', left: img_left_new + 'px' });
         	}
-        });        </script>
+
+
+        });
+}
+
+         </script>
 
         <table width ="100%" >
         </table>
          <div class="down-bar">
             <table style="width: 100%;">
                 <tr>
-                  <td width="91%">
+                  <td width = "2%">
+                  </td>
+                  <td width = "8%">
+                    <img id="zoomin" src="icons/zoom-in.png" width="20px" onclick="zoomin()">
+
+                  <td width = "12%">
+                  <td width ="8%">
+                    <img id="zooout" src="icons/zoom-out.png" width="20px" onclick="zoomout()">
+
+                  <td width="61%">
                       <!-- espaço em branco na top bar -->
                   </td>
                   <td class="popup", width="8%", onclick="helpPopUp()">
@@ -151,7 +246,9 @@
                             <div class = "titulo">
                               Help
                             </div>
-                            <br> - To be defined
+                            <br> - Click the pointer to lock destination;
+                            <br> - Drag around the map to look around;
+                            <br> - Zoom in and out with the magnifying glass;
 
                           </span>
                   </td>

@@ -6,15 +6,37 @@
     font-size: 20px;
 
 }
-
-#matricula{
+#loc{
+  margin-top: 50px;
+}
+#matricula, #estrela, #car, #demo{
     font-size: 16px;
 }
-
-#rating{
-    font-size: 20px;
+#name{
+  font-size: 18px;
 }
+#afterend{
+  display: block;
+  }
+  #afterend2{
+    display: block;
+}
+#finalrating{
+  display: none;
+}
+#rating{
+  font-size: 20px;
+}
+#error{
+  display: block;
+}
+#yolo{
+  display: none;
 
+}
+#start{
+  display: none;
+}
 #error{
   margin-left: 3px;
 }
@@ -139,13 +161,15 @@
   padding: 8px 0;
   position: absolute;
   z-index: 4;
-  bottom: -50%;
+  bottom: 50px;
   left: 50%;
   margin-left: -70px;
   font-size: 13px;
 
 }
-
+#but{
+  display: none;
+}
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 .sureshare .sureshowShare {
